@@ -1,0 +1,9 @@
+.match[match]
+  .match-title=match.title
+  .match-time=match.start_time
+  .match-entries (#{match.entry_count}/#{match.capacity})
+  .match-button
+    -if @enrollments.include?(match.id)
+      =link_to "leave", leave_match_path(match), :remote=>:true, :method => :post, :class => 'button tiny'
+    -else
+      =link_to "join", match_entries_path(match), :remote=>:true, :method => :post, :class => 'button tiny'

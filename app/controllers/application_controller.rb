@@ -3,6 +3,7 @@ class ApplicationController < ActionController::Base
   # For APIs, you may want to use :null_session instead.
   protect_from_forgery with: :exception
   before_action :configure_permitted_parameters, if: :devise_controller?
+  before_action :check_for_upcoming_matches, :except=>[:play]
 
 
   def configure_permitted_parameters
@@ -21,6 +22,18 @@ class ApplicationController < ActionController::Base
       redirect_to finish_signup_path(current_user)
     end
   end
+
+  def check_for_upcoming_matches
+    puts 'checking'
+    if user_signed_in?
+      @upcoming_match = Match.joins(:entries).where('entries.user_id = ?',current_user.id).where('start_time > ? AND start_time < ?',Time.now, Time.now+1.hour).order(start_time: :asc).first
+
+    else
+      @upcoming_match = Match.where(:session_id=>cookies[:session_id]).where('start_time > ? AND start_time < ?',Time.now, Time.now+1.hour).order(start_time: :asc).first
+
+    end
+  end
+
   rescue_from CanCan::AccessDenied do |exception|
     redirect_to new_user_session_path, :alert => exception.message
   end

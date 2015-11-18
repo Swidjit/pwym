@@ -25,6 +25,9 @@ Rails.application.routes.draw do
   resources :matches, :only => [:create, :destroy, :show, :edit, :update] do
     member do
       post :leave
+      post :refresh
+      get :play
+      get :check
     end
     resources :entries, :only => [:create,:index]
   end

@@ -1,0 +1,13 @@
+.row
+  .large-12.columns
+    #game-lobby
+      %h3 time to play
+      .row
+        .large-8.columns
+          =render :partial => 'welcome'
+        .large-4.columns
+          #entries
+            -if @match.status == "active"
+              =render :partial => 'entries/active_entry', :collection => @entries, :as => :entry
+            -elsif @match.status == "playing"
+              =render :partial => 'entries/scoreboard', :collection => @entries, :as => :entry
