@@ -8,10 +8,47 @@
             -if @enrollment_status == 'enrolled'
               In order to play, you must confirm your presence by checking in
               =link_to 'Check In', check_into_match_path(@match), :method => :post, :remote => :true, :class=>'button'
-          =render :partial => 'welcome'
+          #game-content
+            =render :partial => 'welcome'
         .large-4.columns
           #entries
-            -if @match.status == "active"
+            -if ['active','countdown'].include?(@match.status)
               =render :partial => 'entries/active_entry', :collection => @entries, :as => :entry
-            -elsif @match.status == "playing"
+            -elsif ['playing','complete'].include?(@match.status)
               =render :partial => 'entries/scoreboard', :collection => @entries, :as => :entry
+:javascript
+  var int;
+  var match_id = parseInt('#{@match.id}');
+  var playing;
+  var time_to_play;
+
+  refreshMatch();
+  int=setInterval(refreshMatch, 30000);
+  function refreshMatch() {
+    $.get('#{refresh_match_path(@match)}', function(data) {
+      $('#game-content').html("#{escape_javascript render :partial=>'countdown'}");
+      console.log(data);
+      if(data.match_status=='countdown') {
+        time_to_play = 10;
+
+        clearInterval(int);
+        int=setInterval(countdown, 1000);
+      }
+    });
+  }
+
+  function beginGame() {
+    playing=true;
+    $('#game-content').html('lets play!');
+  }
+
+  function countdown() {
+    time_to_play--;
+    if(time_to_play == 0) {
+      clearInterval(int);
+      beginGame();
+    }
+    else {
+      $('#game-content').html("your game will begin in "+time_to_play+" seconds...");
+    }
+  }

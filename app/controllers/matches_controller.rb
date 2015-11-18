@@ -1,6 +1,7 @@
 class MatchesController < ApplicationController
 
   before_filter :set_match, :only => [:show, :leave, :refresh, :check, :check_into, :play]
+  respond_to :js
 
   def show
 
@@ -23,10 +24,14 @@ class MatchesController < ApplicationController
   end
 
   def refresh
+    puts 'refreshing'
     @entries = @match.entries
-    if @match.status = "active"
+
+    if @match.status == "active"
       render 'active_entries'
-    elsif @match.status = "playing"
+    elsif @match.status == "countdown"
+      render :json => {:match_status=>:countdown}
+    elsif @match.status == "playing"
       render 'scoreboard'
     end
   end
@@ -39,7 +44,7 @@ class MatchesController < ApplicationController
   end
 
   def check
-    if @match.start_time.between?(Time.now, Time.now+5.minutes)
+    if @match.status == 'active'
       render 'load_match'
     end
   end

@@ -24,7 +24,6 @@ class ApplicationController < ActionController::Base
   end
 
   def check_for_upcoming_matches
-    puts 'checking'
     if user_signed_in?
       @upcoming_match = Match.joins(:entries).where('entries.user_id = ?',current_user.id).where('start_time > ? AND start_time < ?',Time.now, Time.now+1.hour).order(start_time: :asc).first
 
