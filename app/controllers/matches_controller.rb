@@ -1,6 +1,6 @@
 class MatchesController < ApplicationController
 
-  before_filter :set_match, :only => [:show, :leave, :refresh, :check,:play]
+  before_filter :set_match, :only => [:show, :leave, :refresh, :check, :check_into, :play]
 
   def show
 
@@ -33,11 +33,27 @@ class MatchesController < ApplicationController
 
   def play
     @entries = @match.entries
+    if user_signed_in?
+      @enrollment_status = Entry.where(:user=>current_user, :match=> @match).first.status
+    end
   end
 
   def check
     if @match.start_time.between?(Time.now, Time.now+5.minutes)
       render 'load_match'
+    end
+  end
+
+  def check_into
+    if @match.status == "active"
+      if user_signed_in?
+        @entry = Entry.where(:user=>current_user, :match=> @match).first
+        if @entry.update_attribute(:status, 'checked_in')
+
+        else
+          render 'shared/error'
+        end
+      end
     end
   end
 

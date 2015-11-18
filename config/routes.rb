@@ -28,6 +28,7 @@ Rails.application.routes.draw do
       post :refresh
       get :play
       get :check
+      post :check_into
     end
     resources :entries, :only => [:create,:index]
   end

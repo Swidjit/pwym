@@ -4,6 +4,10 @@
       %h3 time to play
       .row
         .large-8.columns
+          #check-in-message
+            -if @enrollment_status == 'enrolled'
+              In order to play, you must confirm your presence by checking in
+              =link_to 'Check In', check_into_match_path(@match), :method => :post, :remote => :true, :class=>'button'
           =render :partial => 'welcome'
         .large-4.columns
           #entries
