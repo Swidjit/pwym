@@ -26,4 +26,13 @@ namespace :init do
     ActsAsTaggableOn::Tag.create(:name => "neuroplasticity")
   end
 
+  task :seed_matches => :environment do
+    Match.delete_all
+    start_time = Time.now
+    for i in 1..10
+      Match.create(:start_time=>start_time, :title => 'Match #'+i.to_s)
+      start_time += 15.minutes
+    end
+  end
+
 end

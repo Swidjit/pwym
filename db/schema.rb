@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20151117235524) do
+ActiveRecord::Schema.define(version: 20151118154443) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -33,6 +33,40 @@ ActiveRecord::Schema.define(version: 20151117235524) do
   add_index "comments", ["commentable_id", "commentable_type"], name: "index_comments_on_commentable_id_and_commentable_type", using: :btree
   add_index "comments", ["user_id"], name: "index_comments_on_user_id", using: :btree
 
+  create_table "entries", force: :cascade do |t|
+    t.integer "user_id"
+    t.integer "match_id"
+    t.integer "session_id"
+    t.float   "raw_score",  default: 0.0
+    t.float   "score",      default: 0.0
+    t.float   "percentile", default: 0.0
+    t.string  "status",     default: "enrolled"
+  end
+
+  create_table "game_categories", force: :cascade do |t|
+    t.string "title"
+    t.string "description"
+  end
+
+  create_table "games", force: :cascade do |t|
+    t.string   "title"
+    t.string   "description"
+    t.integer  "popularity"
+    t.string   "slug"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "games_game_categories", id: false, force: :cascade do |t|
+    t.integer "game_id"
+    t.integer "game_category_id"
+  end
+
+  create_table "games_matches", id: false, force: :cascade do |t|
+    t.integer "game_id"
+    t.integer "match_id"
+  end
+
   create_table "identities", force: :cascade do |t|
     t.integer  "user_id"
     t.string   "provider"
@@ -42,6 +76,15 @@ ActiveRecord::Schema.define(version: 20151117235524) do
   end
 
   add_index "identities", ["user_id"], name: "index_identities_on_user_id", using: :btree
+
+  create_table "matches", force: :cascade do |t|
+    t.datetime "start_time"
+    t.string   "title"
+    t.string   "mode",        default: "free"
+    t.integer  "capacity",    default: 100
+    t.integer  "entry_count", default: 0
+    t.integer  "entry_cost"
+  end
 
   create_table "posts", force: :cascade do |t|
     t.integer  "user_id"
@@ -62,6 +105,16 @@ ActiveRecord::Schema.define(version: 20151117235524) do
     t.integer  "post_id"
     t.datetime "created_at"
     t.datetime "updated_at"
+  end
+
+  create_table "round_scores", force: :cascade do |t|
+    t.integer "user_id"
+    t.integer "entry_id"
+    t.integer "game_id"
+    t.integer "session_id"
+    t.float   "raw_score"
+    t.float   "score"
+    t.float   "percentile"
   end
 
   create_table "taggings", force: :cascade do |t|

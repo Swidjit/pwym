@@ -18,6 +18,17 @@ Rails.application.routes.draw do
   end
   resources :comments, :only => [:create, :destroy]
 
+  resources :games, :only => [:show, :edit, :update, :index]
+
+  resources :game_categories, :only => [:index, :show, :edit, :update]
+
+  resources :matches, :only => [:create, :destroy, :show, :edit, :update] do
+    member do
+      post :leave
+    end
+    resources :entries, :only => [:create,:index]
+  end
+
   root 'pages#home'
   get '/pages/:page_name' => 'pages#index', :as => :pages
   get '/posts/:category/:tag' => 'posts#index', :as => :filtered_posts
