@@ -27,12 +27,34 @@ namespace :init do
   end
 
   task :seed_matches => :environment do
-    Match.delete_all
+    Match.destroy_all
     start_time = Time.now
     for i in 1..10
-      Match.create(:start_time=>start_time, :title => 'Match #'+i.to_s)
+      @match = Match.create(:start_time=>start_time, :title => 'Match #'+i.to_s)
+      @match.games << Game.find(1)
+      @match.games << Game.find(2)
       start_time += 15.minutes
     end
+  end
+
+  task :seed_games => :environment do
+    Game.destroy_all
+    Game.create(
+      :id=>1,
+      :title=>"GridLogic",
+      :description=>"Clear the board of all the pieces by strategically eliminating them 1 by 1.",
+      :instructions => "Test instructions",
+      :round_time => 10,
+      :slug => 'GridLogic'
+    )
+    Game.create(
+      :id => 2,
+      :title=>"Memory",
+      :description=>"Clear the board of all the pieces by strategically eliminating them 1 by 1.",
+      :instructions => "Test instructions",
+      :round_time => 10,
+      :slug => 'Memory'
+    )
   end
 
 end

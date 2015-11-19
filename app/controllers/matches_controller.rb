@@ -1,6 +1,6 @@
 class MatchesController < ApplicationController
 
-  before_filter :set_match, :only => [:show, :leave, :refresh, :check, :check_into, :play]
+  before_filter :set_match, :only => [:show, :leave, :refresh, :check, :check_into, :play, :load_game]
   respond_to :js
 
   def show
@@ -60,6 +60,14 @@ class MatchesController < ApplicationController
         end
       end
     end
+  end
+
+  def load_game
+    @game = @match.games.offset(@match.round_num-1).first
+    if @match.round_num > 3
+      render 'match_complete'
+    end
+    #@match.increment!(:round_num)
   end
 
   private

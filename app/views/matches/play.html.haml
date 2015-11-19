@@ -11,6 +11,7 @@
           #game-content
             =render :partial => 'welcome'
         .large-4.columns
+          #round-timer
           #entries
             -if ['active','countdown'].include?(@match.status)
               =render :partial => 'entries/active_entry', :collection => @entries, :as => :entry
@@ -21,15 +22,20 @@
   var match_id = parseInt('#{@match.id}');
   var playing;
   var time_to_play;
+  var next_round_timer;
+  var round_timer;
+  var round_time;
+  var next_round_time;
+  var game_id;
+
 
   refreshMatch();
   int=setInterval(refreshMatch, 30000);
   function refreshMatch() {
     $.get('#{refresh_match_path(@match)}', function(data) {
       $('#game-content').html("#{escape_javascript render :partial=>'countdown'}");
-      console.log(data);
       if(data.match_status=='countdown') {
-        time_to_play = 10;
+        time_to_play = 2;
 
         clearInterval(int);
         int=setInterval(countdown, 1000);
@@ -37,18 +43,61 @@
     });
   }
 
-  function beginGame() {
+  function loadGame() {
     playing=true;
     $('#game-content').html('lets play!');
+    $.get('#{load_game_match_path(@match)}');
+
+  }
+
+  function beginRoundCountdown() {
+    next_round_timer = setInterval(roundCountdown, 1000);
   }
 
   function countdown() {
     time_to_play--;
     if(time_to_play == 0) {
       clearInterval(int);
-      beginGame();
+      loadGame();
     }
     else {
       $('#game-content').html("your game will begin in "+time_to_play+" seconds...");
     }
+  }
+
+  function roundCountdown() {
+    next_round_time--;
+    $('#round-timer').html(next_round_time);
+    if(next_round_time == 0) {
+      clearInterval(next_round_timer);
+      loadGame();
+    }
+  }
+
+
+  $(document).on('click','#start',function() {
+    $('#start').remove();
+    round_timer = setInterval(timer, 1000);
+  });
+
+  function timer() {
+    round_time -= 1;
+    $('#timer').html(round_time);
+    if(round_time == 0) {
+      complete();
+    }
+  }
+
+
+  function complete() {
+    clearInterval(round_timer);
+    $.post('#{round_scores_path}',{game_id:game_id, match_id: match_id, score: Math.random()}, function(data) {
+      if(data.success == "true") {
+        showRoundComplete();
+      }
+    });
+  }
+
+  function showRoundComplete() {
+    $('#game-content').html("#{j render :partial=>'matches/round_complete'}");
   }

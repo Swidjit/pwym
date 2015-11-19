@@ -29,9 +29,12 @@ Rails.application.routes.draw do
       get :play
       get :check
       post :check_into
+      get :load_game
     end
     resources :entries, :only => [:create,:index]
   end
+
+  resources :round_scores, :only => [:create]
 
   root 'pages#home'
   get '/pages/:page_name' => 'pages#index', :as => :pages
