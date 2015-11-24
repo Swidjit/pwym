@@ -28,7 +28,7 @@ class ApplicationController < ActionController::Base
       @upcoming_match = Match.joins(:entries).where('entries.user_id = ?',current_user.id).where('start_time > ? AND start_time < ?',Time.now, Time.now+1.hour).order(start_time: :asc).first
 
     else
-      @upcoming_match = Match.where(:session_id=>cookies[:session_id]).where('start_time > ? AND start_time < ?',Time.now, Time.now+1.hour).order(start_time: :asc).first
+      #@upcoming_match = Match.where(:session_id=>cookies[:session_id]).where('start_time > ? AND start_time < ?',Time.now, Time.now+1.hour).order(start_time: :asc).first
 
     end
   end

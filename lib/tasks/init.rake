@@ -33,7 +33,8 @@ namespace :init do
       @match = Match.create(:start_time=>start_time, :title => 'Match #'+i.to_s)
       @match.games << Game.find(1)
       @match.games << Game.find(2)
-      start_time += 15.minutes
+      @match.games << Game.find(3)
+      start_time += 7.minutes
     end
   end
 

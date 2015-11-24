@@ -63,11 +63,17 @@ class MatchesController < ApplicationController
   end
 
   def load_game
+
+    if(@match.status == "scoring")
+      @match.update_attribute(:status, "playing")
+    elsif @match.status == "countdown"
+      @match.update_attributes(:status => "playing", :round_num=>1)
+    end
     @game = @match.games.offset(@match.round_num-1).first
     if @match.round_num > 3
+      @match.update_attribute(:status, "complete")
       render 'match_complete'
     end
-    #@match.increment!(:round_num)
   end
 
   private

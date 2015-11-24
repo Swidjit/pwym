@@ -15,7 +15,7 @@
           #entries
             -if ['active','countdown'].include?(@match.status)
               =render :partial => 'entries/active_entry', :collection => @entries, :as => :entry
-            -elsif ['playing','complete'].include?(@match.status)
+            -elsif ['playing','complete','scoring'].include?(@match.status)
               =render :partial => 'entries/scoreboard', :collection => @entries, :as => :entry
 :javascript
   var int;
@@ -52,6 +52,7 @@
 
   function beginRoundCountdown() {
     next_round_timer = setInterval(roundCountdown, 1000);
+    round_timer = setInterval(timer, 1000);
   }
 
   function countdown() {
@@ -75,9 +76,9 @@
   }
 
 
-  $(document).on('click','#start',function() {
-    $('#start').remove();
-    round_timer = setInterval(timer, 1000);
+  $(document).on('click','#submit',function() {
+    complete();
+
   });
 
   function timer() {
