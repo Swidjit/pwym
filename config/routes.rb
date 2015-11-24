@@ -26,6 +26,7 @@ Rails.application.routes.draw do
     member do
       post :leave
       get :refresh
+      get :refresh_scoreboard
       get :play
       get :check
       post :check_into

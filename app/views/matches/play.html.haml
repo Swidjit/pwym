@@ -16,7 +16,7 @@
             -if ['active','countdown'].include?(@match.status)
               =render :partial => 'entries/active_entry', :collection => @entries, :as => :entry
             -elsif ['playing','complete','scoring'].include?(@match.status)
-              =render :partial => 'entries/scoreboard', :collection => @entries, :as => :entry
+              =render :partial => 'entries/entry_with_score', :collection => @entries, :as => :entry
 :javascript
   var int;
   var match_id = parseInt('#{@match.id}');
@@ -27,6 +27,7 @@
   var round_timer;
   var round_time;
   var next_round_time;
+  var scoreboard_timer;
   var game_id;
 
 
@@ -51,6 +52,9 @@
       }
     });
   }
+  function refreshScoreboard() {
+    $.get('#{refresh_scoreboard_match_path(@match)}');
+  }
   function loadGame() {
     playing=true;
     $('#game-content').html('lets play!');
@@ -64,7 +68,6 @@
   }
 
   function countdown() {
-    console.log("counting down");
     time_to_play--;
     if(time_to_play == 0) {
       clearInterval(countdown_timer);
@@ -80,7 +83,9 @@
     $('#round-timer').html(next_round_time);
     if(next_round_time == 0) {
       clearInterval(next_round_timer);
+      clearInterval(scoreboard_timer);
       loadGame();
+      refreshScoreboard();
     }
   }
 
@@ -101,6 +106,8 @@
 
   function complete() {
     clearInterval(round_timer);
+    refreshScoreboard();
+    scoreboard_timer = setInterval(refreshScoreboard,15000);
     $.post('#{round_scores_path}',{game_id:game_id, match_id: match_id, score: Math.random()}, function(data) {
       if(data.success == "true") {
         showRoundComplete();

@@ -1,6 +1,6 @@
 class MatchesController < ApplicationController
 
-  before_filter :set_match, :only => [:show, :leave, :refresh, :check, :check_into, :play, :load_game]
+  before_filter :set_match
   respond_to :js
 
   def show
@@ -24,7 +24,6 @@ class MatchesController < ApplicationController
   end
 
   def refresh
-    puts 'refreshing'
     @entries = @match.entries
 
     if @match.status == "active"
@@ -34,6 +33,11 @@ class MatchesController < ApplicationController
     elsif @match.status == "playing"
       render :json => {:match_status=>:playing}
     end
+  end
+
+  def refresh_scoreboard
+    @entries = @match.entries.order(score: :desc)
+
   end
 
   def play
