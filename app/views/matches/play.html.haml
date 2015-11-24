@@ -23,26 +23,34 @@
   var playing;
   var time_to_play;
   var next_round_timer;
+  var countdown_timer;
   var round_timer;
   var round_time;
   var next_round_time;
   var game_id;
 
 
-  refreshMatch();
-  int=setInterval(refreshMatch, 30000);
-  function refreshMatch() {
+  checkMatchStatus();
+  int = setInterval(checkMatchStatus, 15000);
+  function checkMatchStatus() {
     $.get('#{refresh_match_path(@match)}', function(data) {
       $('#game-content').html("#{escape_javascript render :partial=>'countdown'}");
       if(data.match_status=='countdown') {
-        time_to_play = 2;
-
+        time_to_play = parseInt(data.match_time);
+        countdown_timer=setInterval(countdown, 1000);
         clearInterval(int);
-        int=setInterval(countdown, 1000);
       }
     });
   }
-
+  function refreshMatchStatus() {
+    $.get('#{refresh_match_path(@match)}', function(data) {
+      if(data.match_status=='playing') {
+        clearInterval(int);
+        clearInterval(countdown_timer);
+        loadGame();
+      }
+    });
+  }
   function loadGame() {
     playing=true;
     $('#game-content').html('lets play!');
@@ -56,10 +64,11 @@
   }
 
   function countdown() {
+    console.log("counting down");
     time_to_play--;
     if(time_to_play == 0) {
-      clearInterval(int);
-      loadGame();
+      clearInterval(countdown_timer);
+      int = setInterval(refreshMatchStatus,5000);
     }
     else {
       $('#game-content').html("your game will begin in "+time_to_play+" seconds...");

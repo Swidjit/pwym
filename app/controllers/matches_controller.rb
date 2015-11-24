@@ -30,9 +30,9 @@ class MatchesController < ApplicationController
     if @match.status == "active"
       render 'active_entries'
     elsif @match.status == "countdown"
-      render :json => {:match_status=>:countdown}
+      render :json => {:match_status=>:countdown, :match_time => (@match.start_time-Time.now)}
     elsif @match.status == "playing"
-      render 'scoreboard'
+      render :json => {:match_status=>:playing}
     end
   end
 
@@ -66,8 +66,6 @@ class MatchesController < ApplicationController
 
     if(@match.status == "scoring")
       @match.update_attribute(:status, "playing")
-    elsif @match.status == "countdown"
-      @match.update_attributes(:status => "playing", :round_num=>1)
     end
     @game = @match.games.offset(@match.round_num-1).first
     if @match.round_num > 3
