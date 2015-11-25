@@ -108,7 +108,7 @@
     clearInterval(round_timer);
     refreshScoreboard();
     scoreboard_timer = setInterval(refreshScoreboard,15000);
-    $.post('#{round_scores_path}',{game_id:game_id, match_id: match_id, score: Math.random()}, function(data) {
+    $.post('#{round_scores_path}',{game_id:game_id, match_id: match_id, score: Math.random()*1000}, function(data) {
       if(data.success == "true") {
         showRoundComplete();
       }

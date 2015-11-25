@@ -73,7 +73,6 @@ class MatchesController < ApplicationController
     end
     @game = @match.games.offset(@match.round_num-1).first
     if @match.round_num > 3
-      @match.update_attribute(:status, "complete")
       render 'match_complete'
     end
   end

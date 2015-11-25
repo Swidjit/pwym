@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20151118221922) do
+ActiveRecord::Schema.define(version: 20151125015251) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -120,6 +120,7 @@ ActiveRecord::Schema.define(version: 20151118221922) do
     t.float   "raw_score"
     t.float   "score"
     t.float   "percentile"
+    t.integer "match_id"
   end
 
   create_table "taggings", force: :cascade do |t|

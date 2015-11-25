@@ -44,6 +44,8 @@ gem 's3_direct_upload'
 
 gem 'clockwork'
 
+gem 'descriptive_statistics', '~> 2.4.0', :require => 'descriptive_statistics/safe'
+
 # bundle exec rake doc:rails generates the API under doc/api.
 gem 'sdoc', '~> 0.4.0', group: :doc
 

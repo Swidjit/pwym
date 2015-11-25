@@ -34,7 +34,7 @@ namespace :init do
       @match.games << Game.find(1)
       @match.games << Game.find(2)
       @match.games << Game.find(3)
-      start_time += 7.minutes
+      start_time += 2.minutes
     end
   end
 

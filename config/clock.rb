@@ -13,7 +13,7 @@ module Clockwork
   #   puts "Running #{job}, at #{time}"
   # end
 
-  every(1.minute, 'frequently.job') {
+  every(30.seconds, 'frequently.job') {
     `rake matches:update_status`
   }
 end

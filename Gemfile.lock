@@ -73,6 +73,7 @@ GEM
     contact_us (1.0.1)
       rails (>= 4.2.0)
     debug_inspector (0.0.2)
+    descriptive_statistics (2.4.0)
     devise (3.5.2)
       bcrypt (~> 3.0)
       orm_adapter (~> 0.1)
@@ -246,6 +247,7 @@ DEPENDENCIES
   clockwork
   coffee-rails (~> 4.1.0)
   contact_us (~> 1.0.1)
+  descriptive_statistics (~> 2.4.0)
   devise
   formtastic (~> 3.0)
   foundation-icons-sass-rails
