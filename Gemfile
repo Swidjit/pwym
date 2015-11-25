@@ -42,6 +42,8 @@ gem 'paperclip'
 gem 'aws-sdk', '< 2.0'
 gem 's3_direct_upload'
 
+gem 'clockwork'
+
 # bundle exec rake doc:rails generates the API under doc/api.
 gem 'sdoc', '~> 0.4.0', group: :doc
 

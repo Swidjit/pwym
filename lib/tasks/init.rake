@@ -56,6 +56,14 @@ namespace :init do
       :round_time => 10,
       :slug => 'Memory'
     )
+    Game.create(
+      :id => 3,
+      :title=>"Spatial",
+      :description=>"Clear the board of all the pieces by strategically eliminating them 1 by 1.",
+      :instructions => "Test instructions",
+      :round_time => 10,
+      :slug => 'Memory'
+    )
   end
 
 end
