@@ -1,5 +1,5 @@
 class GameCategory < ActiveRecord::Base
-  has_many :games
+  has_and_belongs_to_many :games
 
   after_create :add_title_and_slug
 

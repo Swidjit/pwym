@@ -1,3 +1,5 @@
 .row
   .large-12.columns
     %h3=@category.title
+    %h3=@category.description
+    =render :partial => 'games/game_overview', :collection => @games, :as=>:game

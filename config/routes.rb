@@ -36,12 +36,15 @@ Rails.application.routes.draw do
     resources :entries, :only => [:create,:index]
   end
 
+  resources :articles
+
   resources :round_scores, :only => [:create]
 
   root 'pages#home'
   get '/pages/:page_name' => 'pages#index', :as => :pages
   get '/posts/:category/:tag' => 'posts#index', :as => :filtered_posts
   get '/brain-games/:category/:game' => 'games#show'
+  get '/brain-games/:id/' => 'game_categories#show'
   get '/sitemap.xml' => 'pages#sitemap'
   match '/users/:id/finish_signup' => 'users#finish_signup', via: [:get, :patch], :as => :finish_signup
 

@@ -129,6 +129,60 @@ namespace :init do
       :description=>""
     )
 
+
+    Category.destroy_all
+    Category.create(
+      :id=>1,
+      :title=>"Brain Fitness News",
+      :description=>""
+    )
+    Category.create(
+      :id=>2,
+      :title=>"Brain Fitness Tips",
+      :description=>""
+    )
+    Category.create(
+      :id=>3,
+      :title=>"Site News",
+      :description=>""
+    )
+    Category.create(
+      :id=>4,
+      :title=>"Neuroscience",
+      :description=>""
+    )
+
+  end
+
+  task :import_data => :environment do
+    require 'rexml/document'
+    include REXML
+
+    xmlfile = File.new("pwym.xml")
+    xmldoc = Document.new(xmlfile)
+    Article.destroy_all
+    # Now get the root element
+    root = xmldoc.root
+    # This will output all the movie titles.
+    xmldoc.elements.each("rss/channel/item") do |e|
+
+      if e.elements["category"].present? && e.elements["wp:status"].text == "publish"
+        e.each_element_with_attribute("domain","category") do |a|
+          puts a.attributes["nicename"]
+          c = Category.where(:slug=>a.attributes["nicename"]).first
+          if c.present?
+            a = Article.new(:title => e.elements["title"].text, :body => e.elements["content:encoded"].text,:created_at => e.elements["wp:post_date"].text, :category=>c)
+            a.save
+          end
+          c = GameCategory.where(:slug=>a.attributes["nicename"]).first
+          if c.present?
+            a = Game.new(:title => e.elements["title"].text, :description => e.elements["excerpt:encoded"].text,:created_at => e.elements["wp:post_date"].text)
+            a.save
+            c.games << a
+          end
+        end
+      end
+    end
   end
 
 end
