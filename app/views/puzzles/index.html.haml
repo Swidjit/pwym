@@ -1,0 +1,8 @@
+.row
+  .large-12.columns
+    %h3 Puzzles and Brainteasers
+    -@puzzles.each do |p|
+      .puzzle
+        =image_tag('puzzles/'+p.slug.titleize.gsub('-', ' ')+'.jpg')
+        %h4=link_to p.title, '/puzzles-brainteasers/'+p.slug
+        %p=p.description

@@ -1,0 +1,10 @@
+.row
+  .large-12.columns
+    %h4=link_to 'Puzzles & Brainteasers', '/puzzles-brainteasers'
+    %h3 #{@puzzle.title} Puzzle Archives
+    %p=@puzzle.description
+    -for i in 1..@puzzle.count do
+      .puzzle
+        =image_tag('puzzles/'+@puzzle.slug.titleize.gsub('-', ' ')+'.jpg')
+        %h4=link_to ('Puzzle #'+i.to_s), '/puzzles-brainteasers/'+@puzzle.slug+'/'+@puzzle.slug+'-'+i.to_s
+        %p=@puzzle.description

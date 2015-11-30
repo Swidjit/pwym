@@ -50,6 +50,9 @@ Rails.application.routes.draw do
   get '/brain-articles/:id/' => 'articles#index'
   get '/brain-articles/' => 'categories#index'
   get '/sitemap.xml' => 'pages#sitemap'
+  get '/puzzles-brainteasers/:puzzle/:id' => 'puzzle_categories#show_puzzle'
+  get '/puzzles-brainteasers/:puzzle/' => 'puzzle_categories#show'
+  get '/puzzles-brainteasers/' => 'puzzle_categories#index'
   post '/brainball/*all' => 'pages#brainball', defaults: { format: 'xml' }
   match '/users/:id/finish_signup' => 'users#finish_signup', via: [:get, :patch], :as => :finish_signup
 

@@ -153,6 +153,41 @@ namespace :init do
     )
 
   end
+  task :seed_puzzles => :environment do
+    PuzzleCategory.destroy_all
+    PuzzleCategory.create(
+      :id=>1,
+      :count=>12,
+      :title=>"Word Toggle",
+      :slug=>"word-toggle",
+      :description=>"Make the necessary number of adjustments to turn the nonsense string into a word",
+      :instructions=>"The goal of this brainteaser is to toggle the letters up or down in the alphabet to create an English word. Each puzzle consists of a string of nonsense letters as well as a number indicating how many moves you are allowed to make. Starting from here, you need to make adjustments to some or all of the letters in order to arrive at a real word. For example, you might take the puzzle ‘DOART (6)’ and adjust it to make the word ‘CLASS’ by moving D -> C, O -> L, R -> S & T -> S which is a total of 6 moves up or down in the alphabet. Notice that the letter A did not get adjusted – you are free to leave some letters unchanged. New puzzles added weekly."
+    )
+    PuzzleCategory.create(
+      :id=>2,
+      :count=>16,
+      :title=>"Word Tease",
+      :slug=>"word-tease",
+      :description=>"",
+      :instructions=>"The object of this puzzle is to tease apart two different words of equal length from the nonsense string of characters. The letters must appear in the string in the same order as they appear in each respective word. For instance, from the string ‘BAUDDY’ you can tease out the words ‘BUY’ and ‘ADD’. You could not make the word ‘DAY’ because the D comes after the A. Each puzzle consists of 4 different word teases, one for 4-letter words, 5-letter words, 6-letter words and 7-letter words. Write down the letters on a piece of scrap paper and try to work them out. Once you have figured worked the puzzle to your satisfaction, you can click on it to reveal the answers. New puzzles added weekly."
+    )
+    PuzzleCategory.create(
+      :id=>3,
+      :count=>14,
+      :title=>"Blankout",
+      :slug=>"blankout",
+      :description=>"",
+      :instructions=>"The object of this puzzle is to fill in the blanks with the available numbers such that the mathematical equation holds true. There are more empty spots than numbers, meaning that one or more of the numbers must be used more than once. New puzzles added weekly."
+    )
+    PuzzleCategory.create(
+      :id=>4,
+      :count=>1,
+      :title=>"Word Grid",
+      :slug=>"word-grid",
+      :description=>"",
+      :instructions=>"This is a difficult game to understand, but it’s a good one so well worth the effort to try. The puzzle consists of a grid of letters. Your job is to portion off different vertical & horizontal sections such that all letters are accounted for, and all designated sections can be unscrambled into (3, 4 or 5-letter) words. So it is both a matter of recognizing word jumbles and also finding an arrangement such that all letters are incorporated into one of these jumbles. You need not ever move the letters, they should stay where they are, even if jumbled. For this puzzle, since it is confusing, there is a link in the game to an instructions page with a graphical representation of what you need to do."
+    )
+  end
 
   task :import_data => :environment do
     require 'rexml/document'

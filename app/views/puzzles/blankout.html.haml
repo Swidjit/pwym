@@ -1,0 +1,9 @@
+.row
+  .large-12.columns
+    %h3 #{@puzzle.title} #{@game_num}
+    %span=@puzzle.description
+    %object{:data => video_url('blankout/Blankout_'+@game_num+'.swf'), :height => "380",:width => "500", :type => "application/x-shockwave-flash"}
+      %param{:name => "movie", :value => video_url('blankout/Blankout_'+@game_num+'.swf')}/
+      %param{:name => "quality", :value => "high"}/
+    %section.section
+    %p=@puzzle.instructions
