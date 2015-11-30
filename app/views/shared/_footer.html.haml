@@ -66,14 +66,11 @@
   :javascript
     var int;
     var match_id = parseInt('#{@upcoming_match.id}');
+    upcomingMatch();
 
-    checkMatch();
-    int=setInterval(checkMatch, 60000);
-    function checkMatch() {
-      $.get('#{check_match_path(@upcoming_match)}');
-    }
 
 :javascript
+
   $('#login-button').on('click', function() {
     var data = {
       user: {login: $('#login-username').val(), password: $('#login-password').val(), remember_me: '1'}
@@ -173,4 +170,14 @@
           break;
 
       }
+  }
+  function upcomingMatch() {
+    console.log('sdfsf');
+    checkMatch();
+    int=setInterval(checkMatch, 60000);
+
+  }
+  function checkMatch() {
+    console.log("checkingggg");
+    $.get('#{check_match_path(0)}', {match_id:match_id});
   }

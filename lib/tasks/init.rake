@@ -66,4 +66,69 @@ namespace :init do
     )
   end
 
+  task :seed_categories => :environment do
+    GameCategory.destroy_all
+    GameCategory.create(
+      :id=>1,
+      :title=>"Word Games",
+      :description=>""
+    )
+    GameCategory.create(
+      :id=>2,
+      :title=>"Logic Games",
+      :description=>""
+    )
+    GameCategory.create(
+      :id=>3,
+      :title=>"Memory Games",
+      :description=>""
+    )
+    GameCategory.create(
+      :id=>4,
+      :title=>"Focus Games",
+      :description=>""
+    )
+    GameCategory.create(
+      :id=>5,
+      :title=>"Spatial Games",
+      :description=>""
+    )
+    GameCategory.create(
+      :id=>6,
+      :title=>"Search Games",
+      :description=>""
+    )
+    GameCategory.create(
+      :id=>7,
+      :title=>"Multi-Tasking Games",
+      :description=>""
+    )
+    GameCategory.create(
+      :id=>8,
+      :title=>"Math Games",
+      :description=>""
+    )
+    GameCategory.create(
+      :id=>9,
+      :title=>"Eye-Hand Coordintation Games",
+      :description=>""
+    )
+    GameCategory.create(
+      :id=>10,
+      :title=>"Mouse Games",
+      :description=>""
+    )
+    GameCategory.create(
+      :id=>11,
+      :title=>"Card Games",
+      :description=>""
+    )
+    GameCategory.create(
+      :id=>12,
+      :title=>"Miscellaneous Games",
+      :description=>""
+    )
+
+  end
+
 end

@@ -29,6 +29,7 @@
   var next_round_time;
   var scoreboard_timer;
   var game_id;
+  var round_num=1;
 
 
   checkMatchStatus();
@@ -58,7 +59,7 @@
   function loadGame() {
     playing=true;
     $('#game-content').html('lets play!');
-    $.get('#{load_game_match_path(@match)}');
+    $.get('#{load_game_match_path(@match)}', {round_num:round_num});
 
   }
 

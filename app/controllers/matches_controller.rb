@@ -1,6 +1,6 @@
 class MatchesController < ApplicationController
 
-  before_filter :set_match
+  before_filter :set_match, :except => [:check]
   respond_to :js
 
   def show
@@ -48,6 +48,7 @@ class MatchesController < ApplicationController
   end
 
   def check
+    @match = Match.find(params[:match_id])
     if @match.status == 'active'
       render 'load_match'
     end
@@ -71,8 +72,8 @@ class MatchesController < ApplicationController
     if(@match.status == "scoring")
       @match.update_attribute(:status, "playing")
     end
-    @game = @match.games.offset(@match.round_num-1).first
-    if @match.round_num > 3
+    @game = @match.games.offset(params[:round_num].to_i-1).first
+    if @match.status == "complete"
       render 'match_complete'
     end
   end

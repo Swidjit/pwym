@@ -2,4 +2,5 @@ $('#game-content').html('#{j render @game}');
 round_time = parseInt('#{@game.round_time}');
 next_round_time = round_time + 10;
 game_id = parseInt('#{@game.id}');
+round_num++;
 beginRoundCountdown();

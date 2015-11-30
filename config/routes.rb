@@ -20,6 +20,7 @@ Rails.application.routes.draw do
 
   resources :games, :only => [:show, :edit, :update, :index]
 
+
   resources :game_categories, :only => [:index, :show, :edit, :update]
 
   resources :matches, :only => [:create, :destroy, :show, :edit, :update] do
@@ -40,6 +41,7 @@ Rails.application.routes.draw do
   root 'pages#home'
   get '/pages/:page_name' => 'pages#index', :as => :pages
   get '/posts/:category/:tag' => 'posts#index', :as => :filtered_posts
+  get '/brain-games/:category/:game' => 'games#show'
   get '/sitemap.xml' => 'pages#sitemap'
   match '/users/:id/finish_signup' => 'users#finish_signup', via: [:get, :patch], :as => :finish_signup
 

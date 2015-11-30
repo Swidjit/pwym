@@ -13,6 +13,9 @@ class EntriesController < ApplicationController
     if user_signed_in?
       current_user.entries << @entry
       @enrollments = current_user.entries.pluck(:match_id)
+      if @match.start_time.between?(Time.now,Time.now+15.minutes)
+        render 'load_match'
+      end
     elsif cookies[:session_id].to_i > 0
       @entry.session_id = cookies[:session_id]
       @entry.save
@@ -22,6 +25,8 @@ class EntriesController < ApplicationController
 
   def destroy
     @id=@entry.id
+    @match = @entry.match
+    @match.decrement!(:entry_count)
     if @entry.destroy
       respond_with do |format|
         format.js {render 'destroy'}
