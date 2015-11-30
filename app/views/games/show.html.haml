@@ -1,6 +1,9 @@
 .row
   .large-12.columns
-    %h4=link_to @category.title, '/brain-games/'+@category.slug
+    %h4
+      =link_to 'Games', '/brain-games/'
+      >
+      =link_to @category.title, '/brain-games/'+@category.slug
     %h3=@game.title
     %p=@game.description
     =image_tag('screenshots/'+@game.title+'.gif')

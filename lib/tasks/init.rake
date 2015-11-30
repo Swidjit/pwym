@@ -71,42 +71,42 @@ namespace :init do
     GameCategory.create(
       :id=>1,
       :title=>"Word Games",
-      :description=>""
+      :description=>"If you enjoy word jumbles, crossword puzzles, Scrabble, or any of the various online word games floating around the internet, these are the games for you. Create, find, re-assemble, unscramble and otherwise play with words in these fun and challenging verbal games."
     )
     GameCategory.create(
       :id=>2,
       :title=>"Logic Games",
-      :description=>""
+      :description=>"Are you one of those people that loves that triangular peg-jumping game? How about Sudoku puzzles? If so, you should definitely take some time to explore the various logic puzzles, games and tests in this section. If you like tasks that require planning and strategy, you will find plenty of that here."
     )
     GameCategory.create(
       :id=>3,
       :title=>"Memory Games",
-      :description=>""
+      :description=>"The numerous memory games and tests in this category will challenge your memory in all sorts of different ways. Work to remember patters, shapes, associations, images and more. If you are looking for even more practice, check out the exercises in the memory section of our mind exercises."
     )
     GameCategory.create(
       :id=>4,
       :title=>"Focus Games",
-      :description=>""
+      :description=>"These mind games will challenge your attention and focus skills. Pay attention to multiple objects at once, keep track of items “in the dark” and try to piece together moving puzzles."
     )
     GameCategory.create(
       :id=>5,
       :title=>"Spatial Games",
-      :description=>""
+      :description=>"These games and puzzles challenge your ability to arrange, remember and generally perceive the position of objects in space."
     )
     GameCategory.create(
       :id=>6,
       :title=>"Search Games",
-      :description=>""
+      :description=>"Look for hidden objects like words, letters, patterns, pictures and more in these fun online search games. Includes the Zirch family of games."
     )
     GameCategory.create(
       :id=>7,
       :title=>"Multi-Tasking Games",
-      :description=>""
+      :description=>"These multi-tasking games will challenge your ability to handle more than one task at the same time. These are great practice for juggling multiple activities, especially computing ones."
     )
     GameCategory.create(
       :id=>8,
       :title=>"Math Games",
-      :description=>""
+      :description=>"Practice your math and number skills with these free online math games from Play With Your Mind. These games will have you building equations, arranging numbers into mathematical, relationships, performing speedy mental math and more."
     )
     GameCategory.create(
       :id=>9,
@@ -116,17 +116,17 @@ namespace :init do
     GameCategory.create(
       :id=>10,
       :title=>"Mouse Games",
-      :description=>""
+      :description=>"Try out these unusual challenge and games that task you to perform challenging feats with your mouse. Skillfully dodge flying objects or try to accomplish simple tasks with a misbehaving mouse."
     )
     GameCategory.create(
       :id=>11,
       :title=>"Card Games",
-      :description=>""
+      :description=>"These challenging online games and puzzles are played with decks of cards. Do not expect to find hearts, spades, bridge or poker here – these are original card games available only on this website."
     )
     GameCategory.create(
       :id=>12,
       :title=>"Miscellaneous Games",
-      :description=>""
+      :description=>"These online games defy categorization but are sure to challenge your mind in unusual ways. Practice your sense of timing, your ability to estimate, and more."
     )
 
 
@@ -134,22 +134,22 @@ namespace :init do
     Category.create(
       :id=>1,
       :title=>"Brain Fitness News",
-      :description=>""
+      :description=>"All the latest news and findings from the brain fitness industry about brain training, brain workouts & the science of neuroplasticity."
     )
     Category.create(
       :id=>2,
       :title=>"Brain Fitness Tips",
-      :description=>""
+      :description=>"There are a number of different ways to improve your brain fitness aside from playing games. The following is a collection of different ideas on how to improve and maintain your mind."
     )
     Category.create(
       :id=>3,
       :title=>"Site News",
-      :description=>""
+      :description=>"News and updates about playwithyourmind.com"
     )
     Category.create(
       :id=>4,
       :title=>"Neuroscience",
-      :description=>""
+      :description=>"Information and discussion of the latest findings in neuroscience, specifically those regarding the science of neuroplasticity."
     )
 
   end

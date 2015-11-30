@@ -1,5 +1,6 @@
 .row
   .large-12.columns
+    %h4=link_to 'Games', '/brain-games/'
     %h3=@category.title
-    %h3=@category.description
+    %p=@category.description
     =render :partial => 'games/game_overview', :collection => @games, :as=>:game

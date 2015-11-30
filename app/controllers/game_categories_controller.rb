@@ -4,4 +4,8 @@ class GameCategoriesController <  ApplicationController
     @games = @category.games
     render 'games/category'
   end
+
+  def index
+    @categories = GameCategory.all.order(id: :asc)
+  end
 end
