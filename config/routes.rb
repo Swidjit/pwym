@@ -49,6 +49,8 @@ Rails.application.routes.draw do
   get '/brain-articles/:category/:id' => 'articles#show'
   get '/brain-articles/:id/' => 'articles#index'
   get '/brain-articles/' => 'categories#index'
+  get '/brain-fun/:id' => 'posts#show'
+  get '/brain-fun/' => 'posts#index'
   get '/sitemap.xml' => 'pages#sitemap'
   get '/puzzles-brainteasers/:puzzle/:id' => 'puzzle_categories#show_puzzle'
   get '/puzzles-brainteasers/:puzzle/' => 'puzzle_categories#show'
