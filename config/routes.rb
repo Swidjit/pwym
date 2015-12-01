@@ -44,6 +44,7 @@ Rails.application.routes.draw do
   get '/pages/:page_name' => 'pages#index', :as => :pages
   get '/posts/:category/:tag' => 'posts#index', :as => :filtered_posts
   get '/brain-games/:category/:game' => 'games#show'
+  get '/online-brain-games/:category/:game' => 'games#show'
   get '/brain-games/' => 'game_categories#index'
   get '/brain-games/:id/' => 'game_categories#show'
   get '/brain-articles/:category/:id' => 'articles#show'
@@ -52,6 +53,7 @@ Rails.application.routes.draw do
   get '/brain-fun/:id' => 'posts#show'
   get '/brain-fun/' => 'posts#index'
   get '/sitemap.xml' => 'pages#sitemap'
+
   get '/brain-fitness-games/'=> 'exercise_categories#index'
   get '/brain-fitness-games/:category'=> 'exercise_categories#show'
   get '/brain-fitness-games/:category/:exercise'=> 'exercises#show'

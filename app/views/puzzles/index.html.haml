@@ -1,6 +1,21 @@
+-content_for :head do
+  %title Puzzles & Brainteasers | PlayWithYourMind
+  %meta{:content => "Puzzles & Brainteasers | PlayWithYourMind", :property => "og:title"}
+  %meta{:content => "PlayWithYourMind | Brain Games & Mind Puzzles", :property => "og:site_name"}
+  %meta{:content => image_url('brain-games.png'), :property => "og:image"}
+  %meta{:content => "Hand-crafted puzzles best solved with pencil and paper, similar to daily newspaper games.", :property => "og:description"}
+  %meta{:content => "Puzzles & Brainteasers | PlayWithYourMind", :property => "twitter:title"}
+  %meta{:content => "PlayWithYourMind | Brain Games & Mind Puzzles", :property => "twitter:site"}
+  %meta{:content => image_url('brain-games.png'), :property => "twitter:image"}
+  %meta{:content => "Hand-crafted puzzles best solved with pencil and paper, similar to daily newspaper games.", :property => "twitter:description"}
+  %meta{:content => "summary", :property => "twitter:card"}
+  %meta{:content => "Puzzles & Brainteasers | PlayWithYourMind", :property => "title"}
+  %meta{:property => "description", :content => "Hand-crafted puzzles best solved with pencil and paper, similar to daily newspaper games."}
+
 .row
   .large-12.columns
     %h3 Puzzles and Brainteasers
+    %p Unlike the other online games on this site, these puzzles and brainteasers are hand-crafted. Furthermore these are more like traditional newspaper puzzles in that you should copy them down onto paper and work them out by hand rather than in an online gaming interface. New puzzles added weekly.
     -@puzzles.each do |p|
       .puzzle
         =image_tag('puzzles/'+p.slug.titleize.gsub('-', ' ')+'.jpg')
