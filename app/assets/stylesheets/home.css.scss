@@ -1,0 +1,61 @@
+h1.welcome {
+  font-size: 1.3em;
+  font-weight: 600;
+  color: red;
+}
+
+ul.main-sections {
+  list-style-type: none;
+   margin:0px;
+  padding:0px;
+  li {
+    margin-top: 10px;
+  }
+}
+
+ul.sub-section {
+  margin:5px;
+  padding:0px;
+  list-style-type: none;
+  display:inline;
+  li {
+    padding-top:0px;
+    margin-top:0px;
+    display:inline;
+  }
+  li:nth-child(n+2):before {
+      content: "- ";
+
+  }
+  li a {
+    font-size:.8em;
+    text-decoration: underline;
+  }
+}
+.wrap {
+   height: auto;
+   overflow: hidden;
+}
+.ad-column {
+    width: 300px;
+    float: right;
+    height: 300px;
+}
+.content-column {
+    float: none !important; /* not needed, just for clarification */
+    /* the next props are meant to keep this block independent from the other floated one */
+    width: auto;
+    overflow: hidden;
+    margin-right: 310px;
+}
+.like-column {
+    width: 170px;
+    float: right;
+}
+.message-column {
+    float: none !important; /* not needed, just for clarification */
+    /* the next props are meant to keep this block independent from the other floated one */
+    width: auto;
+    overflow: hidden;
+    margin-right: 190px;
+}

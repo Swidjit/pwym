@@ -1,13 +1,75 @@
 .row
   .large-12.columns
-    test
-.row
-  .large-12.columns
-    %h3 Welcome.
-.row
-  .large-6.columns
-    .panel
-      -@upcoming_matches.each do |m|
-        =render m
+    %h1.welcome Fun games, puzzles and brainteasers. Orignal & free!
+    .wrap
+      .like-column
+
+        .fb-like-box{"data-header" => "fase", "data-height" => "115", "data-href" => "http://www.facebook.com/pages/PlayWithYourMindcom/111779804933", "data-show-faces" => "false", "data-stream" => "false", "data-width" => "170", :style => "margin-left:-15px;"}
+      .message-column
+        %p Play With Your Mind features over 100 original mind games, brain puzzles, brain teasers and IQ tests. If you haven't yet heard, playing brain games exercises your cognitive abilities and can improve your brain fitness. So take some time to explore around, play some games, have some fun ... and become smarter in the process.
+
+    .row
+      .large-10.columns
+        .wrap
+          .ad-column
+            %script{:async => "", :src => "//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"}
+            / pwym home center
+            %ins.adsbygoogle{"data-ad-client" => "ca-pub-1203319491225179", "data-ad-format" => "auto", "data-ad-slot" => "1758393027", :style => "display:block"}
+            :javascript
+              (adsbygoogle = window.adsbygoogle || []).push({});
+          .content-column
+            %h4 Main Sections
+            %ul.main-sections
+              %li=link_to "Brain Games","/brain-games/"
+              %ul.sub-section
+                %li=link_to "word games","/brain-games/word-games/"
+                %li=link_to "logic games","/brain-games/logic-games/"
+                %li=link_to "math games","/brain-games/math-games/"
+                %li=link_to "all>",""
+              %li=link_to "Brain Training","#"
+              %ul.sub-section
+                %li=link_to "attention",""
+                %li=link_to "memory",""
+                %li=link_to "visual-spatial",""
+                %li=link_to "all>",""
+              %li=link_to "Puzzles & Brainteasers","/puzzles-brainteasers/"
+              %ul.sub-section
+                %li=link_to "word tease","/puzzles-brainteasers/word-tease/"
+                %li=link_to "word toggle","/puzzles-brainteasers/word-toggle/"
+                %li=link_to "word grid","/puzzles-brainteasers/word-grid/"
+                %li=link_to "blankout","/puzzles-brainteasers/blankout/"
+              %li=link_to "Memory Workout Program","#"
+              %ul.sub-section
+                %li=link_to "object",""
+                %li=link_to "spatial",""
+                %li=link_to "association",""
+                %li=link_to "order",""
+                %li=link_to "all>",""
+              %li=link_to "Brainy Links",posts_path
+              %ul.sub-section
+                %li=link_to "brainteasers",""
+                %li=link_to "mind games",""
+                %li=link_to "optical illusions",""
+                %li=link_to "tests",""
+              %li=link_to "Articles","/brain-articles"
+              %ul.sub-section
+                %li=link_to "brain fitness tips","/brain-articles/brain-fitness-tips/"
+                %li=link_to "neuroscience","/brain-articles/neuroscience/"
+                %li=link_to "brain training","/brain-articles/brain-fitness-news"
+                %li=link_to "reviews","/brain-articles/reviews/"
 
 
+        .row
+          %h3 Newest Stuff
+          .large-7.columns
+            %h4 Brainy Links
+            =render Post.all.limit(10).order(created_at: :desc)
+          .large-5.columns
+            %h4 Articles
+            =render Article.all.limit(10).order(created_at: :desc)
+      .large-2.columns
+        %h5 Master List
+        .master-list
+          =render :partial => 'games/link', :collection=>Game.all, :as => :game
+          %hr
+          =render :partial => 'puzzles/link', :collection=>PuzzleCategory.all, :as=>:puzzle

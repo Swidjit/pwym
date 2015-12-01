@@ -1,0 +1,13 @@
+.row
+  .large-12.columns
+    test
+.row
+  .large-12.columns
+    %h3 Welcome.
+.row
+  .large-6.columns
+    .panel
+      -@upcoming_matches.each do |m|
+        =render m
+
+

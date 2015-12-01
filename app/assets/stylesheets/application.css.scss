@@ -26,10 +26,11 @@
   width: 170px;
   position:absolute;
   margin-top:8px;
+  height:610px;
 }
 #content {
   position:absolute;
-  margin-left:175px;
+  margin-left:180px;
 }
 .small-dropdown {
   position: relative !important;
@@ -295,7 +296,10 @@
 .game {
   margin-bottom: 8px;
 }
-
+.link {
+  height: 15px;
+  line-height:15px;
+}
 .category {
   display: block;
 }
@@ -304,5 +308,41 @@
   p,h4 {
     display: inline;
     margin-left: 15px;
+  }
+}
+
+.article {
+  a {
+    line-height: 15px;
+
+    white-space: nowrap;
+
+    width: 100%;
+  }
+  p {
+    font-size: .8em;
+    line-height:14px;
+    margin-bottom: 0px;
+  }
+  .meta {
+    font-size: 13px;
+  }
+  .head {
+    background-color: #eee;
+    width: 100%;
+    padding: 2px;
+    overflow:hidden;
+  }
+}
+
+
+.master-list {
+  div {
+    margin:0px;
+  }
+  a {
+    font-size:.85em;
+    padding:0px;
+    margin:0px;
   }
 }
