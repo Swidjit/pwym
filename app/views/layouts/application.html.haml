@@ -15,7 +15,14 @@
 
   %body
     =render :partial => 'shared/head'
-    #content
-      = yield
-
+    .row
+      #sidebar
+        %script{:async => "", :src => "//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"}
+        / pwym left banner, created 1/16/09
+        %ins.adsbygoogle{"data-ad-client" => "ca-pub-1203319491225179", "data-ad-slot" => "1668646726", :style => "display:inline-block;width:160px;height:600px"}
+        :javascript
+          (adsbygoogle = window.adsbygoogle || []).push({});
+      #content
+        = yield
+    =render :partial => 'shared/footer'
 

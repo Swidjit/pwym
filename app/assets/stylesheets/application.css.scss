@@ -22,7 +22,15 @@
 @import 'foundation-icons';
 @import "foundation_and_overrides";
 
-
+#sidebar {
+  width: 170px;
+  position:absolute;
+  margin-top:8px;
+}
+#content {
+  position:absolute;
+  margin-left:175px;
+}
 .small-dropdown {
   position: relative !important;
 }
@@ -209,7 +217,7 @@
 
 #content {
   position:relative;
-  top:50px;
+
 }
 .footer {
   background-color: #292c2f;

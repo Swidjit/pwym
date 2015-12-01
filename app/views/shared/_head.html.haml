@@ -14,81 +14,81 @@
           %span Menu
     %section.top-bar-section
       %ul.left
+        %li.divider
+        %li.has-dropdown
+          %a{:href => "#"} Games & Puzzles
+          %ul.dropdown.m-menu
+            %li
+              .row.column.padless
+                .large-4.medium-6.small-12.columns.padless
+                  =link_to "#", :class=>"dropdown-header" do
+                    %h3 Brain Games
+                  %ul
+                    -GameCategory.all.order(id: :asc).each do |gc|
+                      %li=link_to gc.title, '/brain-games/'+gc.slug
+                .large-4.medium-6.small-12.columns.padless
+                  =link_to "#", :class=>"dropdown-header" do
+                    %h3 Puzzles
+                  %ul
+                    -PuzzleCategory.all.order(id: :asc).each do |p|
+                      %li=link_to p.title, '/puzzles-brainteasers/'+p.slug
+                .large-4.medium-6.small-12.columns.padless
+                  =link_to "#", :class=>"dropdown-header" do
+                    %h3 Brainteasers
+                  %ul
+                    -GameCategory.all.order(id: :asc).each_with_index do |gc,value|
+                      %li=link_to ("Brainball #"+value.to_s), "#"
+        %li.divider
+        %li.has-dropdown
+          %a{:href => "#"} Brain Training
+          %ul.dropdown.m-menu
+            %li
+              .row.column.padless
+                .large-6.medium-6.small-12.columns.padless
+                  =link_to "#", :class=>"dropdown-header" do
+                    %h3 Brain Fitness Exercises
+                  %ul
+                    -GameCategory.all.order(id: :asc).each do |gc|
+                      %li=link_to gc.title, '/brain-games/'+gc.slug
+                .large-6.medium-6.small-12.columns.padless
+                  =link_to "#", :class=>"dropdown-header" do
+                    %h3 Memory Workout
+                  %ul
+                    -PuzzleCategory.all.order(id: :asc).each do |p|
+                      %li=link_to p.title, '/puzzles-brainteasers/'+p.slug
+        %li.divider
+        %li.has-dropdown
+          %a{:href => "#"} Brainy Fun
+          %ul.dropdown.m-menu
+            %li
+              .row.column.padless
+                .large-3.medium-6.small-12.columns.padless
+                  =link_to "#", :class=>"dropdown-header" do
+                    %h3 News/Articles
+                  %ul
+                    -GameCategory.all.order(id: :asc).each do |gc|
+                      %li=link_to gc.title, '/brain-games/'+gc.slug
+                .large-3.medium-6.small-12.columns.padless
+                  =link_to "#", :class=>"dropdown-header" do
+                    %h3 Games/Puzzles
+                  %ul
+                    -PuzzleCategory.all.order(id: :asc).each do |p|
+                      %li=link_to p.title, '/puzzles-brainteasers/'+p.slug
+                .large-3.medium-6.small-12.columns.padless
+                  =link_to "#", :class=>"dropdown-header" do
+                    %h3 Optical Illusions
+                  %ul
+                    -PuzzleCategory.all.order(id: :asc).each do |p|
+                      %li=link_to p.title, '/puzzles-brainteasers/'+p.slug
+                .large-3.medium-6.small-12.columns.padless
+                  =link_to "#", :class=>"dropdown-header" do
+                    %h3 Sensory Tests
+                  %ul
+                    -PuzzleCategory.all.order(id: :asc).each do |p|
+                      %li=link_to p.title, '/puzzles-brainteasers/'+p.slug
+      %ul.right
         -if user_signed_in?
-          %li.divider
-          %li.has-dropdown
-            %a{:href => "#"} Games & Puzzles
-            %ul.dropdown.m-menu
-              %li
-                .row.column.padless
-                  .large-4.medium-6.small-12.columns.padless
-                    =link_to "#", :class=>"dropdown-header" do
-                      %h3 Brain Games
-                    %ul
-                      -GameCategory.all.order(id: :asc).each do |gc|
-                        %li=link_to gc.title, '/brain-games/'+gc.slug
-                  .large-4.medium-6.small-12.columns.padless
-                    =link_to "#", :class=>"dropdown-header" do
-                      %h3 Puzzles
-                    %ul
-                      -PuzzleCategory.all.order(id: :asc).each do |p|
-                        %li=link_to p.title, '/puzzles-brainteasers/'+p.slug
-                  .large-4.medium-6.small-12.columns.padless
-                    =link_to "#", :class=>"dropdown-header" do
-                      %h3 Brainteasers
-                    %ul
-                      -GameCategory.all.order(id: :asc).each_with_index do |gc,value|
-                        %li=link_to ("Brainball #"+value.to_s), "#"
-          %li.divider
-          %li.has-dropdown
-            %a{:href => "#"} Brain Training
-            %ul.dropdown.m-menu
-              %li
-                .row.column.padless
-                  .large-6.medium-6.small-12.columns.padless
-                    =link_to "#", :class=>"dropdown-header" do
-                      %h3 Brain Fitness Exercises
-                    %ul
-                      -GameCategory.all.order(id: :asc).each do |gc|
-                        %li=link_to gc.title, '/brain-games/'+gc.slug
-                  .large-6.medium-6.small-12.columns.padless
-                    =link_to "#", :class=>"dropdown-header" do
-                      %h3 Memory Workout
-                    %ul
-                      -PuzzleCategory.all.order(id: :asc).each do |p|
-                        %li=link_to p.title, '/puzzles-brainteasers/'+p.slug
-          %li.divider
-          %li.has-dropdown
-            %a{:href => "#"} Brainy Fun
-            %ul.dropdown.m-menu
-              %li
-                .row.column.padless
-                  .large-3.medium-6.small-12.columns.padless
-                    =link_to "#", :class=>"dropdown-header" do
-                      %h3 News/Articles
-                    %ul
-                      -GameCategory.all.order(id: :asc).each do |gc|
-                        %li=link_to gc.title, '/brain-games/'+gc.slug
-                  .large-3.medium-6.small-12.columns.padless
-                    =link_to "#", :class=>"dropdown-header" do
-                      %h3 Games/Puzzles
-                    %ul
-                      -PuzzleCategory.all.order(id: :asc).each do |p|
-                        %li=link_to p.title, '/puzzles-brainteasers/'+p.slug
-                  .large-3.medium-6.small-12.columns.padless
-                    =link_to "#", :class=>"dropdown-header" do
-                      %h3 Optical Illusions
-                    %ul
-                      -PuzzleCategory.all.order(id: :asc).each do |p|
-                        %li=link_to p.title, '/puzzles-brainteasers/'+p.slug
-                  .large-3.medium-6.small-12.columns.padless
-                    =link_to "#", :class=>"dropdown-header" do
-                      %h3 Sensory Tests
-                    %ul
-                      -PuzzleCategory.all.order(id: :asc).each do |p|
-                        %li=link_to p.title, '/puzzles-brainteasers/'+p.slug
 
-        -if user_signed_in?
           %li.divider
           %li.has-dropdown.small-dropdown
             =link_to current_user.username, user_path(current_user.username)
