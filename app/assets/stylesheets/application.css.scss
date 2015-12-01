@@ -23,10 +23,14 @@
 @import "foundation_and_overrides";
 
 
+.small-dropdown {
+  position: relative !important;
+}
 .top-bar-section .has-dropdown {
   position: static;
   a {
-    font-size: 1.2em;
+    font-size: 1.1em;
+    font-weight: 500;
    position: relative;
    }
 }
@@ -40,13 +44,19 @@
 }
 .top-bar-section ul li > a {
   font-size: 1em;
-
+  line-height: 20px;
 }
 .padless {
   margin: 0px;
   padding: 0px;
 }
 
+.top-bar-section .dropdown li a {
+  line-height: 35px !important;
+  font-size: 17px;
+  margin:0px;
+  padding:0px;
+}
 .top-bar-section .dropdown li a h3{
   display: inline;
   text-transform: none;
@@ -66,6 +76,10 @@
 }
 .top-bar {
 
+}
+
+.dropdown-header li a h3{
+  background-color: red !important;
 }
 
 .title-area h1 {
@@ -109,17 +123,22 @@
 
 
 
+
   /* TOP LINKS INSIDE DROPDOWN STYLES
 –––––––––––––––––––––––––––––––––––––––––––––––––– */
 
 .column li {
+  border-right: 1px solid #fff;
   &:not(:first-child) a {
-    border-top: 1px solid #262626;
+    border-top: 1px solid #fff;
+
+
   }
   &:not(:last-child) a {
     border-bottom: 1px solid #4E4E4E;
   }
   a {
+
     &:hover {
       i {
          right: 3px;
@@ -127,6 +146,7 @@
     }
   }
 }
+
 
 
 
