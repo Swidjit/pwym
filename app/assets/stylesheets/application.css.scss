@@ -224,6 +224,7 @@
   background-color: #292c2f;
   text-align: center;
   font-size: 1.2rem;
+  margin-top: 15px;
 
   padding: 1.5rem 3rem; }
   .footer .inline-list a {
@@ -246,6 +247,10 @@
       margin-bottom: 2rem; }
       .footer .contact li p {
         padding-left: 4rem; }
+        .footer .contact li a {
+        color: #eee; }
+        .footer .contact li a:hover {
+        color: #7cc5f8; }
     .footer .contact i {
       position: absolute;
       background-color: #33383b;
@@ -268,15 +273,41 @@
     list-style: none;
     font-weight: normal;
     color: #fff;
-    padding: 3rem 0 2rem;
     margin: 0;
-    font-size: 0.875rem; }
-    .footer .footer-links a::after {
-      content: "•";
-      padding: 0 0.2rem 0 0.4rem; }
-    .footer .footer-links a:last-child::after {
-      content: "";
-      padding: 0 0.4rem 0 0.8rem; }
+    display:block;
+    font-size: 0.95rem; }
+  .footer .logo {
+    font-size: 1em;
+    color: #eee;
+  }
+  ul.hashtags {
+    list-style-type: none;
+    margin:0px 0px 8px 0;
+      padding: 0px;
+    li {
+      display:inline;
+    }
+    li a {
+      font-size: 1em;
+      color: #7cc5f8;
+      display:inline;
+    }
+    li a:hover {
+      text-decoration: underline;
+    }
+    h3 a{
+      font-size: 1em;
+      color: #eee;
+    }
+    h3 {
+      margin:0px;
+      padding: 0px;
+      line-height: 30px;
+    }
+  }
+  .footer a:hover {
+    color: #7cc5f8;
+  }
   @media only screen and (min-width: 40.063em) {
     .footer p {
       text-align: left; }

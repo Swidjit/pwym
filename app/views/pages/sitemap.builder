@@ -13,12 +13,12 @@ xml.tag! 'urlset', 'xmlns' => 'http://www.sitemaps.org/schemas/sitemap/0.9' do
   }
   xml.url{
       xml.loc(root_url+'brain-articles')
-      xml.changefreq("weeekly")
+      xml.changefreq("weekly")
       xml.priority(0.9)
   }
   xml.url{
       xml.loc(root_url+'puzzles-brainteasers')
-      xml.changefreq("weeekly")
+      xml.changefreq("weekly")
       xml.priority(0.9)
   }
   xml.url{
