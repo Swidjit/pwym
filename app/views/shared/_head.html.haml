@@ -48,8 +48,8 @@
                   =link_to "#", :class=>"dropdown-header" do
                     %h3 Brain Fitness Exercises
                   %ul
-                    -GameCategory.all.order(id: :asc).each do |gc|
-                      %li=link_to gc.title, '/brain-games/'+gc.slug
+                    -ExerciseCategory.all.order(id: :asc).each do |gc|
+                      %li=link_to gc.title, '/brain-fitness-games/'+gc.slug
                 .large-6.medium-6.small-12.columns.padless
                   =link_to "#", :class=>"dropdown-header" do
                     %h3 Memory Workout

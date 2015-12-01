@@ -1,0 +1,19 @@
+-content_for :head do
+  %title Brain Fitness Program | Brain Training
+  %meta{:content => "Brain Fitness Program | Brain Training", :property => "og:title"}
+  %meta{:content => "PlayWithYourMind | Brain Games & Mind Puzzles", :property => "og:site_name"}
+  %meta{:content => image_url('brain-games.png'), :property => "og:image"}
+  %meta{:content =>  "Train your brain in matters of language, problem solving, memory, focus and more.", :property => "og:description"}
+  %meta{:content => "Brain Fitness Program | Brain Training", :property => "twitter:title"}
+  %meta{:content => "PlayWithYourMind | Brain Games & Mind Puzzles", :property => "twitter:site"}
+  %meta{:content => image_url('brain-games.png'), :property => "twitter:image"}
+  %meta{:content =>  "Train your brain in matters of language, problem solving, memory, focus and more.", :property => "twitter:description"}
+  %meta{:content => "summary", :property => "twitter:card"}
+  %meta{:content => "Brain Fitness Program | Brain Training", :property => "title"}
+  %meta{:property => "description", :content => "Train your brain in matters of language, problem solving, memory, focus and more."}
+
+.row
+  .large-12.columns
+    %h3 Brain Fitness Program
+    %p Improve your brain fitness with these various mental exercises. Workout your memory, attention, eye-hand coordination, processing speed and more. Play over 10 different online games to exercise your brain. Each game is available to play at 5 different difficulty levels so you can start off easy and make things more challenging as you improve. Graphs and charts of your scores allow you to see how you are progressing. Looking for something different? Check out these other brain fitness programs
+    =render @categories

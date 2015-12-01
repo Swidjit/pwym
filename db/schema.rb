@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20151130222852) do
+ActiveRecord::Schema.define(version: 20151201174616) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -57,6 +57,20 @@ ActiveRecord::Schema.define(version: 20151130222852) do
     t.float   "score",      default: 0.0
     t.float   "percentile", default: 0.0
     t.string  "status",     default: "enrolled"
+  end
+
+  create_table "exercise_categories", force: :cascade do |t|
+    t.string "title"
+    t.string "description"
+    t.string "slug"
+  end
+
+  create_table "exercises", force: :cascade do |t|
+    t.string  "title"
+    t.string  "description"
+    t.string  "instructions"
+    t.string  "slug"
+    t.integer "exercise_category_id"
   end
 
   create_table "game_categories", force: :cascade do |t|

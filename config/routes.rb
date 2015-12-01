@@ -52,6 +52,11 @@ Rails.application.routes.draw do
   get '/brain-fun/:id' => 'posts#show'
   get '/brain-fun/' => 'posts#index'
   get '/sitemap.xml' => 'pages#sitemap'
+  get '/brain-fitness-games/'=> 'exercise_categories#index'
+  get '/brain-fitness-games/:category'=> 'exercise_categories#show'
+  get '/brain-fitness-games/:category/:exercise'=> 'exercises#show'
+
+
   get '/puzzles-brainteasers/:puzzle/:id' => 'puzzle_categories#show_puzzle'
   get '/puzzles-brainteasers/:puzzle/' => 'puzzle_categories#show'
   get '/puzzles-brainteasers/' => 'puzzle_categories#index'

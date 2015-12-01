@@ -22,6 +22,11 @@ xml.tag! 'urlset', 'xmlns' => 'http://www.sitemaps.org/schemas/sitemap/0.9' do
       xml.priority(0.9)
   }
   xml.url{
+      xml.loc(root_url+'brain-fitness-games')
+      xml.changefreq("monthly")
+      xml.priority(0.8)
+  }
+  xml.url{
       xml.loc(root_url+'brain-fun')
       xml.changefreq("daily")
       xml.priority(0.9)
@@ -40,6 +45,15 @@ xml.tag! 'urlset', 'xmlns' => 'http://www.sitemaps.org/schemas/sitemap/0.9' do
 	      xml.loc(root_url + 'brain-games/'+ c.slug)
 	      xml.changefreq("monthly")
 	      xml.priority(0.8)
+	  }
+
+  end
+
+  ExerciseCategory.all.each do |c|
+	  xml.url{
+	      xml.loc(root_url + 'brain-fitness-games/'+ c.slug)
+	      xml.changefreq("monthly")
+	      xml.priority(0.7)
 	  }
 
   end
@@ -65,6 +79,15 @@ xml.tag! 'urlset', 'xmlns' => 'http://www.sitemaps.org/schemas/sitemap/0.9' do
   Game.all.each do |c|
 	  xml.url{
 	      xml.loc(root_url + 'brain-games/'+ c.game_categories.first.slug + '/' + c.slug)
+	      xml.changefreq("yearly")
+	      xml.priority(0.5)
+	  }
+
+  end
+
+  Exercise.all.each do |c|
+	  xml.url{
+	      xml.loc(root_url + 'brain-fitness-games/'+ c.exercise_category.slug + '/' + c.slug)
 	      xml.changefreq("yearly")
 	      xml.priority(0.5)
 	  }

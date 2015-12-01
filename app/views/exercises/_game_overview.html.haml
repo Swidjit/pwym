@@ -1,0 +1,8 @@
+.game[game]
+  =link_to '/brain-fitness-games/'+game.exercise_category.slug+'/'+game.slug do
+    .row
+      .large-3.columns
+        =image_tag('screenshots/'+game.title+'.gif')
+      .large-9.columns
+        %h4=game.title
+        %p=game.description
