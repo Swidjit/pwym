@@ -151,7 +151,7 @@ namespace :init do
       :title=>"Neuroscience",
       :description=>"Information and discussion of the latest findings in neuroscience, specifically those regarding the science of neuroplasticity."
     )
-
+    GameCategory.find_by_slug('logic-games').update_attribute(:slug,'logic-puzzles')
   end
   task :seed_puzzles => :environment do
     PuzzleCategory.destroy_all
