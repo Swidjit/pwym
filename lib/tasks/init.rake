@@ -196,6 +196,7 @@ namespace :init do
     xmlfile = File.new("pwym.xml")
     xmldoc = Document.new(xmlfile)
     Article.destroy_all
+    Game.destroy_all
     # Now get the root element
     root = xmldoc.root
     # This will output all the movie titles.
