@@ -15,7 +15,7 @@ class Article < ActiveRecord::Base
       self.title = self.body.truncate(25, :separator => ' ',omission: '')
 
     end
-    self.slug = self.title.truncate(25, :separator => ' ',omission: '').downcase.gsub(' ','-')
+    self.slug = self.title.gsub(/[^a-z0-9\s]/i, '').truncate(25, :separator => ' ',omission: '').downcase.gsub('  ',' ').gsub(' ','-')
     self.save
   end
 
