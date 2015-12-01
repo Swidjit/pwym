@@ -21,13 +21,13 @@
             %li
               .row.column.padless
                 .large-4.medium-6.small-12.columns.padless
-                  =link_to "#", :class=>"dropdown-header" do
+                  =link_to "/brain-games", :class=>"dropdown-header" do
                     %h3 Brain Games
                   %ul
                     -GameCategory.all.order(id: :asc).each do |gc|
                       %li=link_to gc.title, '/brain-games/'+gc.slug
                 .large-4.medium-6.small-12.columns.padless
-                  =link_to "#", :class=>"dropdown-header" do
+                  =link_to "/puzzles-brainteasers", :class=>"dropdown-header" do
                     %h3 Puzzles
                   %ul
                     -PuzzleCategory.all.order(id: :asc).each do |p|
@@ -40,7 +40,7 @@
                       %li=link_to ("Brainball #"+value.to_s), "#"
         %li.divider
         %li.has-dropdown
-          %a{:href => "/brain-fitness-program"} Brain Training
+          %a{:href => "/brain-fitness-games"} Brain Training
           %ul.dropdown.m-menu
             %li
               .row.column.padless

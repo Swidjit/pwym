@@ -14,6 +14,11 @@ class PagesController < ApplicationController
 
   end
 
+  def index
+    @title = params[:page_name].titleize
+    render params[:page_name]
+  end
+
   def brainball
     require "rexml/document"
     choices = [{
