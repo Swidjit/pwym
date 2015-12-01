@@ -1,3 +1,17 @@
+-content_for :head do
+  %title Brain Article & Links | Neuroscience, Brain Fitness & More
+  %meta{:content => "Brain Article & Links | Neuroscience, Brain Fitness & More", :property => "og:title"}
+  %meta{:content => "PlayWithYourMind | Brain Games & Mind Puzzles", :property => "og:site_name"}
+  %meta{:content => image_url('brain-games.png'), :property => "og:image"}
+  %meta{:content =>  "Learn about about the science of cognition, neurobiology and brain training.", :property => "og:description"}
+  %meta{:content => "Brain Article & Links | Neuroscience, Brain Fitness & More", :property => "twitter:title"}
+  %meta{:content => "PlayWithYourMind | Brain Games & Mind Puzzles", :property => "twitter:site"}
+  %meta{:content => image_url('brain-games.png'), :property => "twitter:image"}
+  %meta{:content =>  "Learn about about the science of cognition, neurobiology and brain training.", :property => "twitter:description"}
+  %meta{:content => "summary", :property => "twitter:card"}
+  %meta{:content => "Brain Article & Links | Neuroscience, Brain Fitness & More", :property => "title"}
+  %meta{:property => "description", :content => "Learn about about the science of cognition, neurobiology and brain training."}
+
 .row
   .large-12.columns
     =render @categories

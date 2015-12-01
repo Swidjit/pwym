@@ -1,3 +1,16 @@
+-content_for :head do
+  %title #{@game.title} | A Free Online Brain Game | Play With Your Mind
+  %meta{:content => "#{@game.title} | A Free Online Brain Game", :property => "og:title"}
+  %meta{:content => "PlayWithYourMind | Brain Games & Mind Puzzles", :property => "og:site_name"}
+  %meta{:content => image_url('screenshots/'+@game.title+'.gif'), :property => "og:image"}
+  %meta{:content => @game.description, :property => "og:description"}
+  %meta{:content => "#{@game.title} | A Free Online Brain Game", :property => "twitter:title"}
+  %meta{:content => "PlayWithYourMind | Brain Games & Mind Puzzles", :property => "twitter:site"}
+  %meta{:content => image_url('screenshots/'+@game.title+'.gif'), :property => "twitter:image"}
+  %meta{:content => @game.description, :property => "twitter:description"}
+  %meta{:content => "summary", :property => "twitter:card"}
+  %meta{:content => "#{@game.title} | A Free Online Brain Game", :property => "title"}
+  %meta{:property => "description", :content => @game.description}
 .row
   .large-12.columns
     %h4

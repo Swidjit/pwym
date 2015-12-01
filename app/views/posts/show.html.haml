@@ -1,3 +1,17 @@
+-content_for :head do
+  %title #{@post.title} | Games, Puzzles, Brainteasers & IQ Tests
+  %meta{:content => @post.title, :property => "og:title"}
+  %meta{:content => "PlayWithYourMind | Brain Games & Mind Puzzles", :property => "og:site_name"}
+  %meta{:content => image_url('brain-games.png'), :property => "og:image"}
+  %meta{:content => @article.body.truncate(144), :property => "og:description"}
+  %meta{:content => @post.title, :property => "twitter:title"}
+  %meta{:content => "PlayWithYourMind | Brain Games & Mind Puzzles", :property => "twitter:site"}
+  %meta{:content => image_url('brain-games.png'), :property => "twitter:image"}
+  %meta{:content => @post.body.truncate(144), :property => "twitter:description"}
+  %meta{:content => "summary", :property => "twitter:card"}
+  %meta{:content => "#{@post.title} | PlayWithYourMind", :property => "title"}
+  %meta{:property => "description", :content => @post.body.truncate(144)}
+
 .row
   .large-12.columns
     %h4=@item.title

@@ -1,3 +1,17 @@
+-content_for :head do
+  %title Brain Games | Logic, Verbal & Spatial Play for Your Mind
+  %meta{:content => "Brain Games | Logic, Verbal & Spatial Play for Your Mind", :property => "og:title"}
+  %meta{:content => "PlayWithYourMind | Brain Games & Mind Puzzles", :property => "og:site_name"}
+  %meta{:content => image_url('brain-games.png'), :property => "og:image"}
+  %meta{:content =>  "Play free online word games, logic puzzles, memory tests, search games and much more!", :property => "og:description"}
+  %meta{:content => "Brain Games | Logic, Verbal & Spatial Play for Your Mind", :property => "twitter:title"}
+  %meta{:content => "PlayWithYourMind | Brain Games & Mind Puzzles", :property => "twitter:site"}
+  %meta{:content => image_url('brain-games.png'), :property => "twitter:image"}
+  %meta{:content =>  "Play free online word games, logic puzzles, memory tests, search games and much more!", :property => "twitter:description"}
+  %meta{:content => "summary", :property => "twitter:card"}
+  %meta{:content => "Brain Games | Logic, Verbal & Spatial Play for Your Mind", :property => "title"}
+  %meta{:property => "description", :content => "Play free online word games, logic puzzles, memory tests, search games and much more!"}
+
 .row
   .large-12.columns
     =render @categories

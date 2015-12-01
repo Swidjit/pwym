@@ -1,3 +1,17 @@
+-content_for :head do
+  %title #{@puzzle.title} #{@game_num}  | A Brainteaser Puzzle
+  %meta{:content => "#{@puzzle.title} #{@game_num}  | A Brainteaser Puzzle", :property => "og:title"}
+  %meta{:content => "PlayWithYourMind | Brain Games & Mind Puzzles", :property => "og:site_name"}
+  %meta{:content => image_url('brain-games.png'), :property => "og:image"}
+  %meta{:content => @puzzle.description, :property => "og:description"}
+  %meta{:content => "#{@puzzle.title} #{@game_num}  | A Brainteaser Puzzle", :property => "twitter:title"}
+  %meta{:content => "PlayWithYourMind | Brain Games & Mind Puzzles", :property => "twitter:site"}
+  %meta{:content => image_url('brain-games.png'), :property => "twitter:image"}
+  %meta{:content => @puzzle.description, :property => "twitter:description"}
+  %meta{:content => "summary", :property => "twitter:card"}
+  %meta{:content => "#{@puzzle.title} #{@game_num}  | A Brainteaser Puzzle", :property => "title"}
+  %meta{:property => "description", :content => @puzzle.description}
+
 .row
   .large-12.columns
     %h3 #{@puzzle.title} #{@game_num}

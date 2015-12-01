@@ -1,3 +1,17 @@
+-content_for :head do
+  %title Brainy Articles on #{@category.title} | PlayWithYourMind
+  %meta{:content => "#{@category.title} Articles", :property => "og:title"}
+  %meta{:content => "PlayWithYourMind | Brain Games & Mind Puzzles", :property => "og:site_name"}
+  %meta{:content => image_url('brain-games.png'), :property => "og:image"}
+  %meta{:content => @category.description, :property => "og:description"}
+  %meta{:content => "#{@category.title} Articles", :property => "twitter:title"}
+  %meta{:content => "PlayWithYourMind | Brain Games & Mind Puzzles", :property => "twitter:site"}
+  %meta{:content => image_url('brain-games.png'), :property => "twitter:image"}
+  %meta{:content => @category.description, :property => "twitter:description"}
+  %meta{:content => "summary", :property => "twitter:card"}
+  %meta{:content => "#{@category.title} Articles", :property => "title"}
+  %meta{:property => "description", :content => @category.description}
+
 .row
   .large-12.columns
     %h4=link_to "Articles", '/brain-articles'
