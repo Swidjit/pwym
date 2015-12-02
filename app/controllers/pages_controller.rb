@@ -1,5 +1,6 @@
 class PagesController < ApplicationController
   skip_before_filter :verify_authenticity_token, :only => :brainball
+
   def home
     @upcoming_matches = Match.where('start_time > ?',Time.now).order(start_time: :asc).limit(20)
     if user_signed_in?
@@ -11,6 +12,10 @@ class PagesController < ApplicationController
   end
 
   def sitemap
+
+  end
+
+  def crossdomain
 
   end
 

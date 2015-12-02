@@ -57,6 +57,7 @@ Rails.application.routes.draw do
   get '/brain-fun/:id' => 'posts#show'
   get '/brain-fun/' => 'posts#index'
   get '/sitemap.xml' => 'pages#sitemap'
+  get '/crossdomain.xml' => 'pages#crossdomain', defaults: { format: 'xml' }
   get '/game-instructions/:id' => 'instructions#show'
   get '/brain-fitness-games/'=> 'exercise_categories#index'
   get '/brain-fitness-games/:category'=> 'exercise_categories#show'
