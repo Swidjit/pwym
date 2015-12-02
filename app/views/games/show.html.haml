@@ -19,4 +19,6 @@
       =link_to @category.title, '/brain-games/'+@category.slug
     %h3=@game.title
     %p=@game.description
-    =image_tag('screenshots/'+@game.title+'.gif')
+    %object{:data => video_url('games/'+@game.title+'.swf'), :height => "460",:width => "600", :type => "application/x-shockwave-flash"}
+      %param{:name => "movie", :value => video_url('games/'+@game.title+'.swf')}/
+      %param{:name => "quality", :value => "high"}/

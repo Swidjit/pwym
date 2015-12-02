@@ -19,7 +19,7 @@
     %h5
       =link_to '< Memory Workout', '/memory-workout-program/'
     %object{:data => video_url('memory-games/'+@game.title.gsub(' ','')+'.swf'), :height => "475",:width => "600", :type => "application/x-shockwave-flash"}
-      %param{:name => "movie", :value => video_url('mind-exercises/'+@game.title+'.swf')}/
+      %param{:name => "movie", :value => video_url('memory-games/'+@game.title.gsub(' ','')+'.swf')}/
       %param{:name => "quality", :value => "high"}/
 .row
   .large-3.columns
