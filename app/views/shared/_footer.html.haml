@@ -1,3 +1,4 @@
+
 %footer.footer
   .row
     .small-12.medium-6.large-3.columns
@@ -39,6 +40,19 @@
         =link_to "Presidential Election Games", "http://presidentialelectiongames.com"
         =link_to "The Keyboard Playground", "http://freeonlinetypinggames.com"
         =link_to "Good Luck Test", "http://goodlucktest.com"
+  %h3.master-list And finally, the master list of mind games and brain puzzles:
+  .row#master-list
+    .large-12.columns
+
+      -GameCategory.all.each do |gc|
+        -if gc.games.count > 0
+          %ul
+            %li
+              %h5=gc.title
+            -gc.games.each do |g|
+              %li=link_to g.title, game_path(g)
+      %h5 Puzzles/Brainteasers
+      =render :partial => 'puzzles/link', :collection=>PuzzleCategory.all, :as=>:puzzle
   .row{:style=>'margin-top:15px;'}
     .large-12.columns.text-center
       %span{:style=>'color:#eee;'} Copyright © 2004-2015 A Playground for the Mind

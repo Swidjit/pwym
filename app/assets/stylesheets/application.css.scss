@@ -224,7 +224,7 @@
   background-color: #292c2f;
   text-align: center;
   font-size: 1.2rem;
-  margin-top: 15px;
+  margin-top:15px;
 
   padding: 1.5rem 3rem; }
   .footer .inline-list a {
@@ -376,13 +376,37 @@
 .memory_workout:hover {
   background-color: #ede;
 }
-.master-list {
-  div {
-    margin:0px;
+
+
+h3.master-list {
+  text-align:left;
+  margin-top: 6px;
+  font-size: .9em;
+
+}
+
+#master-list {
+  text-align:center;
+  margin-top: 15px;
+  padding: 15px 22px;
+  -webkit-column-count: 3; /* Chrome, Safari, Opera */
+  -moz-column-count: 3; /* Firefox */
+  column-count: 3;
+
+  h5 {
+    color:#ddd;
+    line-height:.7em;
+
   }
-  a {
-    font-size:.85em;
-    padding:0px;
-    margin:0px;
+  ul {
+    margin: 0px 0px 13px;
+    list-style-type: none;
+    li {
+      line-height: .9em;
+    }
+    li a{
+      font-size: .9em;
+      color:white;
+    }
   }
 }

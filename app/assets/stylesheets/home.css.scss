@@ -1,7 +1,7 @@
 h1.welcome {
   font-size: 1.3em;
   font-weight: 600;
-  color: red;
+  line-height: 35px;
 }
 
 ul.main-sections {
@@ -10,6 +10,12 @@ ul.main-sections {
   padding:0px;
   li {
     margin-top: 10px;
+    h4{
+      font-size: 1.1em;
+      line-height: .8em;
+      margin:0px;
+      padding: 0px;
+    }
   }
 }
 
@@ -28,7 +34,7 @@ ul.sub-section {
 
   }
   li a {
-    font-size:.8em;
+    font-size:.9em;
     text-decoration: underline;
   }
 }
@@ -58,4 +64,9 @@ ul.sub-section {
     width: auto;
     overflow: hidden;
     margin-right: 190px;
+}
+
+.bold {
+  font-weight: 600;
+
 }
