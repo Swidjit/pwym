@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<instructions game="TypeDown">
+<tip>The goal of this memory game is to remember the order of the words.</tip>
+<tip>To start, you will be presented with a list of words one by one.  Figure out some strategy for remembering the order in which they appear.</tip>
+<tip>Once you have seen all the words in succession, they will all appear in a list.  Drag and drop the words to rearrange them such that the top word corresponds to the first word you saw while the bottom was the last.</tip>
+</instructions>

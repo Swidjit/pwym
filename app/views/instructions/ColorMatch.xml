@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<instructions game="TypeDown">
+<tip>The goal of this memory game is to match colors of the same tile from opposite sides of the board.</tip>
+<tip>To make a match, click on one tile from each side to reveal their colors. If they match, they will disappear, otherwise they will flip back over and you will need to remember their color.</tip>
+<tip>There are only 8 colored pieces, so on boards with more than 8 pairs there will be some colors that appear more than once.</tip>
+</instructions>

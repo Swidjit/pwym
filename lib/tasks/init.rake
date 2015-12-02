@@ -188,6 +188,101 @@ namespace :init do
       :instructions=>"This is a difficult game to understand, but it’s a good one so well worth the effort to try. The puzzle consists of a grid of letters. Your job is to portion off different vertical & horizontal sections such that all letters are accounted for, and all designated sections can be unscrambled into (3, 4 or 5-letter) words. So it is both a matter of recognizing word jumbles and also finding an arrangement such that all letters are incorporated into one of these jumbles. You need not ever move the letters, they should stay where they are, even if jumbled. For this puzzle, since it is confusing, there is a link in the game to an instructions page with a graphical representation of what you need to do."
     )
   end
+  task :seed_memory_workout => :environment do
+    MemoryWorkout.destroy_all
+
+    MemoryWorkout.create(
+      :id=>1,
+      :title=>'Photo Tracker',
+      :slug => 'photo-tracker-game',
+      :description => 'In this memory exercise, a photograph will be broken up into a number of different pieces and displayed in a grid of these pieces.  Your job is to click on each piece of the photograph once (and preferably only once).
+
+This would be simple except for the fact that the pieces shuffle every time you click one. So you need to keep track of which ones you have already clicked.
+
+Your score is based on how quickly you click on them all versus how many mistakes(when you click on a piece more than once) you make. Your progress is displayed in the top right corner.
+'
+    )
+    MemoryWorkout.create(
+      :id=>2,
+      :title=>'Object Memory',
+      :slug => 'object-memory-game',
+      :description => 'In this memory exercise, you will be presented with a group of colored shapes and asked to remember them.  At this point, the shapes are in the form of humans in various poses.
+
+You will have some time to commit these shapes into your memory before they vanish. You will then see a grid of similar pieces and you must click on the ones presented in step 1.
+
+Your score is based on how many target pieces you find and how many mistakes you make. Your progress is displayed in the top right corner.'
+    )
+    MemoryWorkout.create(
+      :id=>3,
+      :title=>'Spatial Memory',
+      :slug => 'spatial-memory-game',
+      :description => 'The object of this memory game is to remember the location of each of the shapes.
+
+You will be presented with a series of shapes arranged randomly on the screen and given a few moments to memorize their location.  Then, the pieces will moved to the top left corner and you will have to drag them and place them as they were originally.
+
+Your score is based on how close you are with each shape. Once you hit "All Done" to submit your guesses, the actual locations will flash briefly so you can compare'
+    )
+    MemoryWorkout.create(
+      :id=>4,
+      :title=>'Color Match',
+      :slug => 'color-match-game',
+      :description => 'The goal of this memory game is to match colors of the same tile from opposite sides of the board.
+
+To make a match, click on one tile from each side to reveal their colors. If they match, they will disappear, otherwise they will flip back over and you will need to remember their color.
+
+There are only 8 colored pieces, so on boards with more than 8 pairs there will be some colors that appear more than once.'
+    )
+    MemoryWorkout.create(
+      :id=>5,
+      :title=>'Word Order',
+      :slug => 'word-order-game',
+      :description => 'The goal of this memory game is to remember the order of the words.
+
+To start, you will be presented with a list of words one by one.  Figure out some strategy for remembering the order in which they appear.
+
+Once you have seen all the words in succession, they will all appear in a list.  Drag and drop the words to rearrange them such that the top word corresponds to the first word you saw while the bottom was the last'
+    )
+    MemoryWorkout.create(
+      :id=>6,
+      :title=>'ColorCodes',
+      :slug => 'colorcodes',
+      :description => 'The goal of this memory game is to associate strings of characters to colors.
+
+Each of the colors in the game will be assigned a random string of character such as "AE34J0".  You need to learn to couple these strings to each of the colors and then click on the appropriate color each time its matching string appears.  To view the strings for each color, roll over the color key at the top of the playing board.
+
+Your score is based on how many matches you make versus how many times you need to view the key.  Ideally, you just want to look at the key just once, but you may view it as many times as you need to remember the pairings.'
+    )
+    MemoryWorkout.create(
+      :id=>7,
+      :title=>'Iconic Memory',
+      :slug => 'iconic-memory-game',
+      :description => 'In this memory game, the targets will disappear one by one.  Your job is to click as close to possible to the point where the target was before it vanished.
+
+Each target has three different zones, an outer zone, a middle one and and inner zone.  You will score more points for hitting the inner zone then the outer one.
+
+Once a piece disappears, you have only a few seconds to make your guess before the next one vanishes.  Your score is based on how accurate you are, with a penalty for each target you miss.'
+    )
+    MemoryWorkout.create(
+      :id=>8,
+      :title=>'Schedule Memory',
+      :slug => 'schedule-memory-game',
+      :description => 'The goal of this memory exercise is to remember the time of your commitments and then place them into the appropriate spot in your schedule.
+
+To start, you will be shown a series of activities accompanied with a time.  Pay close attention and remember when each event is happening.  Once you have seen all your plans, you will be given an empty schedule and asked to place events into the correct time by dragging and dropping the event into the right slot.
+
+You have a limited time to place each activity so act quickly.  Your score is based on how accurately you place each item.'
+    )
+    MemoryWorkout.create(
+      :id=>9,
+      :title=>'ReMemory',
+      :slug => 'rememory-game',
+      :description => 'In this memory game, you learn from your experiences and apply them.  You will complete the exact same task twice, the first time using trial and error and the second time using your memory.</tip>
+
+the game coinsists of a grid of numbers, each of them has one and only one match with a piece of the same number. However, you cannot tell which pieces match; you need to experiment to find them.  Drag and drop to make matches.
+<!--more-->
+As you create the matches, keep track of them as you will have to match them again in stage 2.  Once you have cleared stage 1, you will move on and have to complete the board a second time.'
+    )
+  end
 
   task :seed_exercise_cats => :environment do
     ExerciseCategory.destroy_all

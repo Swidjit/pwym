@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<instructions game="TypeDown">
+<tip>In this memory exercise, a photograph will be broken up into a number of different pieces and displayed in a grid of these pieces.  Your job is to click on each piece of the photograph once (and preferably only once).</tip>
+<tip>This would be simple except for the fact that the pieces shuffle every time you click one. So you need to keep track of which ones you have already clicked.</tip>
+<tip>Your score is based on how quickly you click on them all versus how many mistakes(when you click on a piece more than once) you make. Your progress is displayed in the top right corner.</tip>
+</instructions>

@@ -54,8 +54,8 @@
                   =link_to "#", :class=>"dropdown-header" do
                     %h3 Memory Workout
                   %ul
-                    -PuzzleCategory.all.order(id: :asc).each do |p|
-                      %li=link_to p.title, '/puzzles-brainteasers/'+p.slug
+                    -MemoryWorkout.all.order(id: :asc).each do |p|
+                      %li=link_to p.title, '/memory-workout-program/'+p.slug
         %li.divider
         %li.has-dropdown
           %a{:href => "/brain-fun"} Brainy Fun

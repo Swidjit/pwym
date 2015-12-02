@@ -1,0 +1,30 @@
+-content_for :head do
+  %title #{@game.title} | A Free Online Brain Game | Play With Your Mind
+  %meta{:content => "#{@game.title} | A Free Online Brain Game", :property => "og:title"}
+  %meta{:content => "PlayWithYourMind | Brain Games & Mind Puzzles", :property => "og:site_name"}
+  %meta{:content => image_url('screenshots/'+@game.title+'.gif'), :property => "og:image"}
+  %meta{:content => @game.description, :property => "og:description"}
+  %meta{:content => "#{@game.title} | A Free Online Brain Game", :property => "twitter:title"}
+  %meta{:content => "PlayWithYourMind | Brain Games & Mind Puzzles", :property => "twitter:site"}
+  %meta{:content => image_url('screenshots/'+@game.title+'.gif'), :property => "twitter:image"}
+  %meta{:content => @game.description, :property => "twitter:description"}
+  %meta{:content => "summary", :property => "twitter:card"}
+  %meta{:content => "#{@game.title} | A Free Online Brain Game", :property => "title"}
+  %meta{:property => "description", :content => @game.description}
+.row
+  .large-12.columns
+
+
+    %h3=@game.title
+    %h5
+      =link_to '< Memory Workout', '/memory-workout-program/'
+    %object{:data => video_url('memory-games/'+@game.title.gsub(' ','')+'.swf'), :height => "475",:width => "600", :type => "application/x-shockwave-flash"}
+      %param{:name => "movie", :value => video_url('mind-exercises/'+@game.title+'.swf')}/
+      %param{:name => "quality", :value => "high"}/
+.row
+  .large-3.columns
+
+    =image_tag('screenshots/'+@game.title.gsub(' ','')+'.jpg', :style=>'margin-top:12px;')
+  .large-9.columns
+    %h5 Memory Game Instructions
+    %p=@game.description

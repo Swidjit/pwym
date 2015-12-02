@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<instructions game="TypeDown">
+<tip>In this memory game, the targets will disappear one by one.  Your job is to click as close to possible to the point where the target was before it vanished.</tip>
+<tip>Each target has three different zones, an outer zone, a middle one and and inner zone.  You will score more points for hitting the inner zone then the outer one.</tip>
+<tip>Once a piece disappears, you have only a few seconds to make your guess before the next one vanishes.  Your score is based on how accurate you are, with a penalty for each target you miss.</tip>
+</instructions>

@@ -57,11 +57,13 @@ Rails.application.routes.draw do
   get '/brain-fun/:id' => 'posts#show'
   get '/brain-fun/' => 'posts#index'
   get '/sitemap.xml' => 'pages#sitemap'
-
+  get '/game-instructions/:id' => 'instructions#show'
   get '/brain-fitness-games/'=> 'exercise_categories#index'
   get '/brain-fitness-games/:category'=> 'exercise_categories#show'
   get '/brain-fitness-games/:category/:exercise'=> 'exercises#show'
 
+  get '/memory-workout-program/'=> 'memory_workouts#index'
+  get '/memory-workout-program/:exercise'=> 'memory_workouts#show'
 
   get '/puzzles-brainteasers/:puzzle/:id' => 'puzzle_categories#show_puzzle'
   get '/puzzles-brainteasers/:puzzle/' => 'puzzle_categories#show'

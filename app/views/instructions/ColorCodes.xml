@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<instructions game="TypeDown">
+<tip>The goal of this memory game is to associate strings of characters to colors. </tip>
+<tip>Each of the colors in the game will be assigned a random string of character such as 'AE34J0'.  You need to learn to couple these strings to each of the colors and then click on the appropriate color each time its matching string appears.  To view the strings for each color, roll over the color key at the top of the playing board.</tip>
+<tip>Your score is based on how many matches you make versus how many times you need to view the key.  Ideally, you just want to look at it once, but you may view it as many times as you need.</tip>
+</instructions>

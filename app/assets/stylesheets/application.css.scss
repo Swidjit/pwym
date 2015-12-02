@@ -366,7 +366,16 @@
   }
 }
 
+.memory_workout {
+  padding: 5px 8px;
 
+  img {
+    margin-top:10px;
+  }
+}
+.memory_workout:hover {
+  background-color: #ede;
+}
 .master-list {
   div {
     margin:0px;

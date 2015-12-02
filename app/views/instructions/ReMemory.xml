@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<instructions game="TypeDown">
+<tip>In this memory game, you learn from your experiences and apply them.  You will complete the exact same task twice, the first time using trial and error and the second time using your memory.</tip>
+<tip>the game coinsists of a grid of numbers, each of them has one and only one match with a piece of the same number. However, you cannot tell which pieces match; you need to experiment to find them.  Drag and drop to make matches.</tip>
+<tip>As you create the matches, keep track of them as you will have to match them again in stage 2.  Once you have cleared stage 1, you will move on and have to complete the board a second time.</tip>
+</instructions>

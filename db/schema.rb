@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20151201174616) do
+ActiveRecord::Schema.define(version: 20151202000832) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -120,6 +120,13 @@ ActiveRecord::Schema.define(version: 20151201174616) do
     t.string   "status",          default: "enrolling"
     t.integer  "round_num",       default: 0
     t.datetime "next_round_time"
+  end
+
+  create_table "memory_workouts", force: :cascade do |t|
+    t.string "title"
+    t.string "description"
+    t.string "instructions"
+    t.string "slug"
   end
 
   create_table "posts", force: :cascade do |t|

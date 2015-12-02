@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<instructions game="TypeDown">
+<tip>This is a game of memory where you need to track of the locations of different letters.</tip>
+<tip>Each of these letters is located within one of the available windows.</tip>
+<tip>You may switch in between these windows using the numbered buttons on top.</tip>
+<tip>Your target letter is displayed at top.  This is the one you need to find and click.</tip>
+<tip>The better you remember where all the letters are, the most efficiently you will find them, and the better you will score.</tip>
+</instructions>
