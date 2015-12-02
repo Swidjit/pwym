@@ -52,7 +52,16 @@
             -gc.games.each do |g|
               %li=link_to g.title, 'brain-games/'+g.game_categories.first.slug + '/' + g.slug
       %h5 Puzzles/Brainteasers
-      =render :partial => 'puzzles/link', :collection=>PuzzleCategory.all, :as=>:puzzle
+      %ul
+        =render :partial => 'puzzles/link', :collection=>PuzzleCategory.all, :as=>:puzzle
+      %h5 Brain Training Exercises
+      %ul
+        -Exercise.all.each do |e|
+          %li=render :partial => 'exercises/link', :locals => {game: e}
+      %h5 Memory Workouts
+      %ul
+        -MemoryWorkout.all.each do |e|
+          %li=render :partial => 'memory_workouts/link', :locals => {game: e}
   .row{:style=>'margin-top:15px;'}
     .large-12.columns.text-center
       %span{:style=>'color:#eee;'} Copyright © 2004-2015 A Playground for the Mind
