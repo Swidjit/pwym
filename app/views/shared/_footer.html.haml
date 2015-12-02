@@ -50,7 +50,7 @@
             %li
               %h5=gc.title
             -gc.games.each do |g|
-              %li=link_to g.title, game_path(g)
+              %li=link_to g.title, 'brain-games/'+g.game_categories.first.slug + '/' + g.slug
       %h5 Puzzles/Brainteasers
       =render :partial => 'puzzles/link', :collection=>PuzzleCategory.all, :as=>:puzzle
   .row{:style=>'margin-top:15px;'}

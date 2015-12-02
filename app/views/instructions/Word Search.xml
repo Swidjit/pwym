@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+
+<task>
+<instructions>You all know how to do a word search, but just in case you don't, the name says it all: find the word.</instructions>
+<instructions>In this game, you have a specific word you need to find (which appears at the bottom of the game board), and you have a limited time to find it.  Look for it in the puzzle and then click on it.  If you are correct it will disappear and you will get a new word.  If you can't find it before the time bar expires, you lose a chance at that word.</instructions>
+<instructions>In order to pass, you may miss no more than 3 words.  Your score is based on how many you find, how fast you do it, and how many mistakes you make.</instructions>
+<instructions>Words can appear vertically, horizontally, forwards and backwards, but NOT DIAGONALLY.
+</task>

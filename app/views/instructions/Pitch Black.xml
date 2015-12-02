@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><info>
+<instructions>The object is to select the balls as they move invisibly beneath the target.  Ideally, you want to select them when they are close to the bullseye.</instructions>
+<instructions>The game board consists of 9 different colored balls and a large circular target in the center.  The target has four different zones, the outer ones being bigger and the innermost one, the bullseye, much smaller. </instructions>
+<instructions>The colored bounce around the screen, but they always pass beneath the target area, so once they move into that zone, you can no longer see them.  Instead, you must track them with your mind and extrapolate their motion. When you feel they are traveling through their innermost zone (not all balls will pass through the bullseye zone), it is time to select the ball.</instructions>
+<instructions>To select a ball, use the key down bottom.  Click on the icon corresponding to the ball you are tracking.  The target zone you hit will briefly flash yellow to indicate the location of the selected ball.</instructions>
+<instructions>You will earn points for each ball you capture inside the target, and lose points if you select a ball that is not in a target zone.  In order to pass, you must reach the target point value for the round.</instructions>
+</info>

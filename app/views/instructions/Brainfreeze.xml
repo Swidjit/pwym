@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><info>
+<instructions>Brainfreeze is a simple concept but a challenging game.  When you begin, each tile in the grid cycles between different pictures.  Each time you click on a tile, it will freeze, while a second click unfreezes it.  Your goal is to freeze all of the tiles so that they make a single, coherent picture.  You need to complete a picture before the time expires.</instructions>
+<instructions>Remember, if you want a frozen tile to begin cycling again, start it again with another click</instructions>
+<instructions>With each round, the pictures get more difficult.  In round one, it is clear which pieces belong to which pictures, but in the later rounds, your may have a more difficult time figuring this out.</instructions>
+</info>

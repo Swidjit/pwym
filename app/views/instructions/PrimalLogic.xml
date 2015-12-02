@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><info>
+<instructions>The object of this game is to try to create as many prime numbers from the board as possible. </instructions> 
+<instructions>Each round you will start off with a group of numbered tiles.  Moving a tile top of the another tile will make the first tile disappear but not before the value in the first tile is added to the value of the tile you dropped it on.  In this way, you will be consolidating the tiles on the board, and you can continue to do so until you are content with your board.  You are trying to create as many prime numbers as possible while leaving behind as few nonprimes as possible.</instructions>
+<instructions>Your score will be determined by the number of primes you create versus the number of nonprimes left behind (there is also a time component to reward players for fast play).</instructions>
+<instructions>Remember, you may only move at a tile unto another tile if the two titles are adjacent horizontally, vertically, or diagonally.  Also,  ONLY PRIMES GREATER THAN 15 AND LESS THAN 100 ARE VALID.</instructions>
+</info>

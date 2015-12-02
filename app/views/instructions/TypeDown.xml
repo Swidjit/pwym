@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<task>
+<instructions>The object of this game is to prevent the rising column of words from reaching the top by typing them as fast as you can.</instructions>
+<instructions>Once you have typed a word, hit the space bar or enter key to submit it.  Also, use space/enter to clear any mistake you make, as the delete key will not work.</instructions>
+<instructions>Each level consists of 20 words. You must eliminate them all before the stack hits the top in order to proceed to the next level; otherwise your game is over.</instructions>
+<instructions>The levels move in sets of 3.  Within a set, length of the words remains the same while their rising speed increases.  After each set, the word length goes up one and the speed resets.</instructions>
+</task>

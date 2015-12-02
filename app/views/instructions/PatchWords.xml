@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<instructions game="TypeDown">
+<tip>The goal of this game is to fill in the blanks to create words.</tip>
+<tip>The game board consists of a series of words displayed with some of their letters removed.  These missing letters are displayed along the bottom.  Complete all the words by filling them in with their missing letters.</tip>
+<tip>Drag letters from the bottom into blank spots within the words.  You may also switch letters that have already been placed, but only those that were originally displayed along the bottom (the white ones).</tip>
+<tip>Once you have placed all the letters, your words will be checked.  If they are all correct you will complete the round and move on.  Otherwise, invalid words will briefly flash before you are given an opportunity to adjust them.</tip>
+<tip>Your must complete all the words before time expires in order to continue on with the game.</tip>
+</instructions>

@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<instructions game="TypeDown">
+<tip>The object of this memory game is to remember the location of each of the shapes.</tip>
+<tip>You will be presented with a series of shapes arranged randomly on the screen and given a few moments to memorize their location.  Then, the pieces will moved to the top left corner and you will have to drag them and place them as they were originally.</tip>
+<tip>Your score is based on how close you are with each shape. Once you hit 'All Done' to submit your guesses, the actual locations will flash briefly so you can compare.</tip>
+</instructions>

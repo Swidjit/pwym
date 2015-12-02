@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><info>
+<instructions>  As the name suggests, this game is a combination between Mahjongg and Numbles (another playwithyourmind.com game).  Basically, this means that you need to clear the board of tiles by putting together different Numbles.  A numble is a group of three numbers that can be mathematically associated as one of the follwoing:</instructions>
+<instructions>Prime Set (example 3,7,13)</instructions>
+<instructions>Adding Set (example 4,6,10)</instructions>
+<instructions>Product Set (example 2,7,14)</instructions>
+<instructions>Straight Set (example 13,14,15)</instructions>
+<instructions>GCD/GCF Set (example 5,10,20, GCD=5)</instructions>
+<instructions>To clear a set, click on the three component numbers.  In the case of the product, adding & straight sets, you must click the component pieces in the necessary order (4,6,10 works for adding while 4,10,6 does not).  If the three numbers you select make a set, they will vanish.</instructions>
+<instructions>Ideally, you are going to want to clear all the pieces, but as this can be quite difficult, so you are allowed to leave up to three tiles and still pass.  However, if you do not get it down to 3 or fewer tiles before your time expires, or if you do not amass enough points over the course of the round, your game will be over.</instructions>
+<instructions>The different Numbles sets are worth different amounts of points.  However, the best way to score in this game is to achieve balance; you want to try to get an even amount of each numble as opposed to getting a lot of the highest scoring one.</instructions></info>

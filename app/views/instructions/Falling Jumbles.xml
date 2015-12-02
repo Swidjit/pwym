@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><info>
+<instructions>The object of this game is very straightforward.  Jumbled words will fall from the top of the screen and you have to unscramble them and type them in before they hit the bottom.  The words will start off short but get longer over the course of the game.</instructions>
+<instructions>The goal of the game is to successfully unscramble 10 words before the round ends.  If you are able to do so, you will continue to the next round, if not, your game will end.</instructions>
+<instructions>Make sure to HIT THE SPACE BAR AFTER YOU TYPE A WORD in order to submit it.  You will score for each word you correctly submit based on its length and how long it took you to unscramble it (which zone it is in when you solve it).  Your score will also be impacted by how long it takes you to reach the 10-word goal.</instructions>
+<instructions>Part of the challenge of this game is dealing with anagrams, especially in the first round.  The game will only accept the orignal word, not any anagrams of it, so you may need to try several times with letters like OPST ("stop","post"."pots","spot", etc).</instructions>
+</info>

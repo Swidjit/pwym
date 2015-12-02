@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><info>
+<instructions>This is another search game, except in this version of Zirch, you are looking for words instead of letters.</instructions>  
+<instructions>Each round there will be a bunch of words moving around the screen.  At the bottom, you will see your target word drifting from the left side of the screen towards the right side of the screen.  As soon as you find the target word within the gameboard, click on it and it will disappear (both on the playing field and below).</instructions>
+<instructions>The faster you find your target word (as measured by how far the word has traveled across the screen), the more points you will get for finding it.  However, if a word passes across and moves off the screen before you are able to find it, that will count as a miss, and once you have missed five words over the course of the game, your game will be over.</instructions>
+<instructions>As the game goes on, it will become more difficult as their will be more words and they will be moving faster.</instructions></info>

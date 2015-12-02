@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+
+<task>
+<instructions>The object of this game is straight-forward:  keep the balls away from the edge.</instructions>
+
+<instructions>The trick is that there are many balls but you can only see one of them at any given time.  Much like you would have different windows open to run different applications while using your computer, each ball exists in a different window and you must switch back and forth between windows to manage the different balls.</instructions>
+
+<instructions>To switch between windows, choose the appropriate window from the colored buttons at bottom (the color of the button corresponds to the windows of the same colors).  To redirect a ball, use the arrow keys (that is, if a ball is heading down towards the bottom edge, press up to turn it around).</instructions>
+
+<instructions>You begin with an energy of 1000. Every second that a ball touches an edge you will lose 18 energy points.  Well more precisely, you lose 1 point every 1/18th of a second per ball per wall (if stuck in a corner it is touching two walls).  The more energy you have left at the end, the better your score.</instructions>
+
+<instructions>Each round lasts 60 seconds.  Your game will continue as long as you have some energy remaining.  To surive deep into the game, you must learn to manage your time and remember to give the most attention to the fastest-moving balls.</instructions>
+
+</task>

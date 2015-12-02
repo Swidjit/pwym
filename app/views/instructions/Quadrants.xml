@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><info>
+<instructions>The object of the game is to strategically place the pieces as they fall (like Tetris).  Each piece is a square made of four colored quadrants (sections). As it falls, you can move it left or right with the arrow keys, or rotate it with the up arrow key. You can also use the down arrow key to speed downward motion.</instructions>
+<instructions>As you place a piece, you want to try to match colors to make diamonds.  If you get just 1 match (Sample 1), nothing happens. However, if you create 2 or 3 matches, the falling piece will vanish and you will get a score based on the value of the colors involved (different colors have different values, and more valuable ones are more rare).  If you get 3 matches, you will also earn a bonus which will be factored into your score at the end of the round.</instructions>
+<instructions>In order to pass a round, you must survive 70 pieces. You lose when you are forced to place a piece in the top row.</instructions>
+</info>

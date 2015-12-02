@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><info>
+<instructions>Numbles search is very similar to Numbles.  You are dealing with the same mathematical relationships, except in this instance, you are searching for them instead of trying to create them. </instructions> 
+<instructions>Each round, you will be shown a board, and on the bottom left of the screen you will see the combinations that you need to search for.  It will list each mathematical relationship, and to tell you how many exist in the board.  As you find them, you will see these tallies decreasing.</instructions
+><instructions>To select a set, click on the three numbers starting at one end of the line and going to the other.  That is, if thie set is a 5, 7, 9, you can click 5 than 7 then 9, or you can click 9 then 7 than 5.  If you click the 7 first, the set will not register.</instructions>
+</info>

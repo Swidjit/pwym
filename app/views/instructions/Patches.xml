@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><info>
+<instructions>The object of this search game is to find your target piece within the grid of colors.  You will be presented with a 3 by 3 pattern consisting of 9 colored squares - this appears at the top of the playing field.  Below your target, is a gird of colors, and somewhere within this grid is a 3x3 area that matches your pattern.  When you find on it, click it and, if you are correct, you will be given a new target to find.</instructions>
+<instructions>In order to pass a round, you must find at least 5 targets before the time expires.  You will score extra points for each additional target you find within the allotted time.  You will also lose points for each incorrect guess - that is, if you click somewhere on the grid other than on your target.</instructions>
+<instructions>This brain game gets more difficult as you progress through the rounds as the board gets larger and the number of colors you work with decreases.</instructions>
+</info>

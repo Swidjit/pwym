@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><info>
+<instructions>The object of this game is to complete the simple tasks with a misbehaving mouse.  That is, your mouse will not act as it usually does, but will instead move according to a different logic.  For instance, in the first set of tasks, your mouse will move in the opposite horizontal direction to the way that you move it (if you move left, it will go right instead).</instructions>
+<instructions>There are a total of 6 tasks in this game.  You will play through each of them with the first mouse configuration, then if you succeed, you will cycle through these tasks again only this time your mouse will behave differently.</instructions>
+</info>

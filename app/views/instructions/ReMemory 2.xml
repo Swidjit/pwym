@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+
+<task>
+<instructions>This task exercises your ability to remember and apply your lessons.  You will be given a task to play un-scored, and then given the same task again, this time scored.  How well you perform depends on how well you remember your experiences from the first try.</instructions>
+
+<instructions>The game board is a grid of numbers.  The goal is to clear the board of numbers by creating pairs, such as a 1 and a 1 or a 2 and a 2.  The trick is that there are two or more pairs of each number, and each pair can only be made one way.  A 3-piece will not match any 3-piece, only its specific match, so you need to pay attention to which pieces match and which do not.</instructions>
+
+<instructions>To make matches, drag a numbered piece onto another piece of the same number.  If they are a match, they will both disappear; if they are not, they will snap back into place.  So clear the first board of matches taking care to remember the location of each match (no need to hurry, there is no score and plenty of time for the first try).  Once you have cleared the board it will reappear and now you want to try to clear it quickly while making few errors.</instructions>
+
+</task>

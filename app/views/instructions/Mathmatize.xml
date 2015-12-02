@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><info>
+<instructions>Each round you will be given some target values and some numbers.  You need to arrange the numbers into equations you need to build a set of equations to reach these target values.</instructions>
+<instructions>To build an equation, simply click on the next number or operation (+, -, x or /) you want to add (from your choices on the left) and it will be placed into the next slot in the active equation. Once you have finished an equation, click on another empty slot to start building that equation.  You may clear the contents on an equation by hitting the 'c' button, or you may undo your last moves by hitting the space bar.</instructions>
+<instructions>In order to pass a round, you must successfully solve all but 2 equations.  If you complete all of them, you will earn a special bonus based on how much time you have left in the round.</instructions>
+</info>

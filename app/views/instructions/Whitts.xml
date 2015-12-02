@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><info>
+<instructions>Welcome to the game of Whitts, a card game.  The object of this game is to tally as many points as possible as you remove the cards from the board one by one.
+  Each round will begin with a bunch of cards laid out on the board like in solitaire.  You must remove all of the cards, but the order in which you do it matters greatly.  As you remove them, each set of 3 cards is evaluated and scored based on the followin criteria:</instructions>
+<instructions>5 - two of same suit 
+20 - three of same suit 
+40 - two of same number
+40 - sum divisible by 5
+50 - consecutive 
+100 - three of same number </instructions>
+<instructions>There are two different queues you can play into (appearing next to the arrows at the bottom of the screen).  To play a card, simply drag it and drop it onto on of the arrows (you may only play the bottom card in a row).  Each one of these two hands is scored independently.  The sets are scored continuously, so if you have Q-J-10 in a queue, you will be scored a straight.  If you then add a 9, it will become J-10-9 and you will be scored another straight.</instructions>
+
+<instructions>Each round, you need to get a certain number of points in the allotted time in order to pass.</instructions>
+<instructions>It is also important to note that you are not playing with cards as you know them.  Instead these are our version of cards which are ultimately easier to work with and more logical.  There are no face cards nor aces, instead each card is labeled with between 1 and 12 dots, correlating to cards valued 1 - 12. Instead of two red suits and two black suits, our cards each have their own color.  Ultimately, the only difference in terms of functionality is that there are 48 cards instead of 52.</instructions>
+
+</info>

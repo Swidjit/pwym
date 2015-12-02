@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><info>
+<instructions>In this game, you will be given a set of randomly generated strings that you need to adjust and make into words.  By adjust, I mean move the individual letters in the string up or down in the alphabet sequence (A -- B --  C -- D..).  For example, if you started with the string 'PBTV', you could: </instructions>
+<instructions>select 'P' and move it up 4 to T,</instructions> 
+<instructions>select 'B' and move it up 3 to E,</instructions>
+<instructions>select 'T' and move it down 1 to S,</instructions>
+<instructions>select 'V' and move it down 2 to T</instructions>
+<instructions>and you would have changed 'PBTV' to 'TEST' using 10 moves.  You goal is to turn each of the strings into words using as few moves as possible.  In the game, a red letter indicates a letter that has been moved down and a blue one indicates a letter that has been moved up.</instructions>
+</info>

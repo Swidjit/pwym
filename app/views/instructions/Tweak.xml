@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><info>
+<instructions>The object of this logic game is very simple: arrange the colored pieces on the board so that no two pieces of the same color are adjacent (horizontally, vertically, or diagonally).</instructions>
+<instructions>Each round, you have a certain number of moves to complete this task, and any moves you have a left at the end of the round will result in a bonus score.  If you are unable to complete the board within the allotted number of moves, your game will be over.  Each round, the board gets bigger.</instructions>
+<instructions>To adjust the board, simply drag a piece and drop it on to another piece; this will switch the two pieces involved.  You may switch any two pieces on the board; they need not be adjacent.</instructions></info>

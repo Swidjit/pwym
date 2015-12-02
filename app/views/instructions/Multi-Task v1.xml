@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><info>
+<instructions>This is the first installment of a series of multi-tasking games.  In each of these games, you will need to manage two or more different tasks at the same time.</instructions>
+<instructions>In this game, you need to match the blocks of like color, while simultaneously dodging the moving shapes.  Use your mouse to navigate your piece and dodge the shapes and use your keyboard to match the colored blocks.</instructions>
+<instructions>The colored blocks appear stacked on the right side of the screen.  They are each labeled with a number.  To match them, press the two numbers associated with the blocks.  If you are correct, they will be replaced with new blocks. </instructions>
+<instructions>Meanwhile, on the left, you need to move the black circle with your mouse to prevent collisions with the moving shapes.  You will lose energy anytime this black piece is in contact with another piece (except for minimal contact).  Try to stay away from the edge because you will lose control of your black piece if your mouse moves outside the ballfield.</instructions>
+<instructions>The end goal of this game is to match all the blocks before you run out of energy. The more energy and time you have left at the end, the higher you will score.</instructions>
+</info>

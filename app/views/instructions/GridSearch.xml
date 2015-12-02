@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><info>
+<instructions>Welcome to GridSearch.  The object of this game is to find your target piece within the grid of pieces.  Each piece is actually a small rectangular chunk of a picture.You must find 10 targets to move onto the next round, and the faster you can do this, the better you will score.</instructions>
+<instructions>Your target appears at the bottom of the screen with the grid of pieces above it.  Each space in this grid shows a "picture chunk".  Search the grid for the target chunk and then click on it to move to the next target.  Each time you find one of your chunks (a hit), you will be given a new target and a new grid.</instructions>
+<instructions>You are penalized every time you click on an incorrect letter, so don't guess wildly.</instructions></info>

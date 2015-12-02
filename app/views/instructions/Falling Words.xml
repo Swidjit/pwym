@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><info>
+<instructions>The object of this game is to type as fast as humanly possible. </instructions> 
+<instructions>There are words falling from the top of the screen, and you need to try to type them before they hit the bottom.  At first, the words will start off short and move relatively slowly.  However, as the game picks up, they will get longer and move faster.  Furthermore, for every word that hits the ground (the white horizontal line at the bottom), the ground will rise (one pixel for each character in the word).  When this bar reaches the red line near the top of the screen, the game is over.</instructions>
+<instructions>To submit a word once you have typed it, hit the space bar.  Again, PRESS SPACE AFTER EACH WORD TO SUBMIT IT. </instructions>
+</info>

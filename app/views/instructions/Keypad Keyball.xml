@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><info>
+<instructions>In this typing game, there is one main difference from the regular game of Keyball.  In regular Keyball you are trying to catch groups of blue balls together while avoiding the red balls.  In this game, you are trying to catch any group of uniformly colored balls (3 reds, 2 blues, 4 greens), any group of balls that are all the same color.  If there is even one impurity into the key field (6 greens but 1 red) it will not score but rather count as a miss.  The major exception to this rule is the gray bonus ball.  You may catch this with any group of same colored balls and it will multiply your score for those balls by the bonus factor.</instructions>
+<instructions>Each round, you need to accumulate a certain number of points to move on, otherwise the game will end.  Your game will also end once you have accumulated 25 misses over the course of the game</instructions>
+</info>

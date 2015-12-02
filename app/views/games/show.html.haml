@@ -22,3 +22,24 @@
     %object{:data => video_url('games/'+@game.title+'.swf'), :height => "460",:width => "600", :type => "application/x-shockwave-flash"}
       %param{:name => "movie", :value => video_url('games/'+@game.title+'.swf')}/
       %param{:name => "quality", :value => "high"}/
+    #instructions
+      %h3 Game Instructions
+
+:javascript
+  var inst_url = '/game-instructions/#{@game.title.gsub(' ','')}.xml';
+  console.log(inst_url);
+  $.ajax({
+    type: "GET",
+    url: inst_url,
+    dataType: "xml",
+    success: function(xml) {
+
+      files = $(xml);
+      console.log(files);
+      files.find('instructions').each(function() {
+        txt = $(this).text();
+        html = '<p>'+txt+'</p>';
+        $('#instructions').append(html);
+      });
+    }
+  });

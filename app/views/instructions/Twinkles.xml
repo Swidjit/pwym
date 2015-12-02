@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+
+<task>
+<instructions>This game requires a tremendous amount of focus and concentration.  The goal of the game is to match the pieces on the board..  The difficulty lies in determining which pieces match.</instructions>
+
+<instructions>Each "piece" is really a grid of 9 colored squares.  Each of these 9 colored squares rhythmically cycle between different colors, so the composition/appearnace of any given piece is constantly changing, and has no set identity except for the pattern of its change. </instructions>
+
+<instructions>Your task is to eliminate all the pieces from the game board by finding matches - pieces that cycle in the same pattern.  How you do this part is up for you to figure out.  To make a match, click on one piece and then its match; if you are correct, they will both vanish.</instructions>
+
+<instructions>Your score is based on how quickly you clear the board and how many mistakes you make while doing so.  You must clear the board before time expires in order to move on to the next stage of the puzzle.</instructions>
+
+</task>

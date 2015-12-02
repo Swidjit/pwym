@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<instructions game="TypeDown">
+<tip>The goal of this game is to arrange the numbers such that the each row and column have the appropriate sums.</tip>
+<tip>The white number before each row/column is the target value for that group.  The numbers after each row and column show you the current value (red=incorrect, green=correct). Switch the numbers around by dragging and dropping until all rows and columns are correct.</tip>
+<tip>Your score is based on how many moves it takes you to finish the board and how quickly you do it.</tip>
+<tip>Each round the grid grows and the range of numbers increases.</tip>
+</instructions>

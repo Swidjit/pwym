@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><info>
+<instructions>As the name suggests, this word game is very much like Hangman.  The main differences are that in this game you are trying to complete a sentence instead of a word, and you also have more assets/cheats to use than a simple letter guess.</instructions>
+<instructions>Each round will start off with a blank phrase that you will try to fill in.  The empty white boxes indicate the placement of the letters and the words.  Below the target phrase is your guessing panel that you use to try to guess the sentence.</instructions> 
+<instructions>There are five different assets you have at your disposal as you attempt to solve the sentence.  There are vowel cheats, consonant cheats, two-letter guesses, three-letter guesses, and letter reveals.  To use any of these assets, click on their names and then type your guess into the guess box on the right.  If you try to use a vowel cheat but then type in a consonant in the guess box, it will not accept it.  If you have mistakenly selected a cheat, you may clear and reset it as long as you have not yet submitted a legitimate guess for that cheat.</instructions>
+<instructions>The vowel, consonant and reveal cheats are easy to use, but the 2-letter and 3-letter are tricker.  However, there are quite handy to determine individual words if there are a couple different possibilities.</instructions>
+<instructions>Your score is based on how fast you solve the puzzle and how mnay of your cheats you use.</instructions>
+</info>

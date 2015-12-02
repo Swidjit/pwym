@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+
+<task>
+<instructions>This game is similar to the well-known game of Minesweeper, but with some important differences.</instructions>
+
+<instructions>Each board consists of a grid of pieces.  Hidden within this grid are a number of targets (equivalent to the mines of Minesweeper) which must try to identify without actually revealing them.  In order to do so, you must use deductive logic.</instructions>
+
+<instructions>All the rest of the pieces - those that dont hide targets - contain numbers.  The number in each piece indicates the distance, in steps, to the closest target.  If a piece's number reads one, that means there is a target directly adjacent (horizontal or vertical) to the piece.  If the number is black, that means that there is just one target at that distance, but if it is colored, that indicates that more than one target is located one step away from the piece.  In fact, the color of the number tells you exactly how many targets are at the stated distance (blue=2, green=3 ... full key above game board).</instructions>
+
+<instructions>The game begins with two non-target pieces revealed in order to decrease the chance you will start off by selecting a target.  As you reveal the numbers, you will begin to determine where the targets are. When you think you have correctly identified a target, mark it by clicking on it with the space bar depressed (you can unmark a piece by clicking on it normally).</instructions>
+
+<instructions>The number of targets on the board is indicated by the number of red Xs along the bottom.  Once you have marked (or accidentally revealed) all the targets, your round will end.</instructions>
+
+<instructions>In order to continue with the game, you may miss no more than 2 targets.  Three wrong in any round and you are done.</instructions>
+
+</task>
