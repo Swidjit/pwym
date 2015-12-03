@@ -22,9 +22,19 @@
     %object{:data => video_url('games/'+@game.title+'.swf'), :height => "460",:width => "600", :type => "application/x-shockwave-flash"}
       %param{:name => "movie", :value => video_url('games/'+@game.title+'.swf')}/
       %param{:name => "quality", :value => "high"}/
+
+.row
+  .large-6.columns
+    #comments{:style=>'margin-top: 25px;'}
+      %h6 Comments
+      .comments
+        = render :partial => 'comments/comment', :collection => @comments, :as => :comment
+      -if user_signed_in?
+        = render :partial => 'comments/form', :locals => { :comment => @new_comment }
+
+  .large-5.columns
     #instructions
       %h3 Game Instructions
-
 :javascript
   var inst_url = '/game-instructions/#{@game.title.gsub(' ','')}.xml';
   console.log(inst_url);

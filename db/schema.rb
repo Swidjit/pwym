@@ -24,7 +24,7 @@ ActiveRecord::Schema.define(version: 20151203020947) do
     t.integer  "category_id"
     t.datetime "created_at"
     t.datetime "updated_at"
-    t.string   "template"
+    t.string   "template",           default: "main"
     t.string   "image_file_name"
     t.string   "image_content_type"
     t.integer  "image_file_size"

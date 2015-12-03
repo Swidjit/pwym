@@ -10,6 +10,8 @@ class GamesController <  ApplicationController
     end
     if params.has_key?(:game)
       @game = Game.find_by_slug(params[:game])
+      @comments = @game.comment_threads.order('created_at desc')
+      @new_comment = Comment.build_from(@game, current_user.id, "") if user_signed_in?
     else
       render 'games/category'
     end

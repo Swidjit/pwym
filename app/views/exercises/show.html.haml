@@ -23,3 +23,9 @@
       %param{:name => "movie", :value => video_url('mind-exercises/'+@game.title+'.swf')}/
       %param{:name => "quality", :value => "high"}/
     %p=@game.description
+    #comments{:style=>'margin-top: 25px;'}
+      %h6 Comments
+      .comments
+        = render :partial => 'comments/comment', :collection => @comments, :as => :comment
+      -if user_signed_in?
+        = render :partial => 'comments/form', :locals => { :comment => @new_comment }

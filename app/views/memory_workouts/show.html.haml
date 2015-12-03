@@ -28,3 +28,11 @@
   .large-9.columns
     %h5 Memory Game Instructions
     %p=@game.description
+.row
+  .large-12.columns
+    #comments{:style=>'margin-top: 25px;'}
+      %h6 Comments
+      .comments
+        = render :partial => 'comments/comment', :collection => @comments, :as => :comment
+      -if user_signed_in?
+        = render :partial => 'comments/form', :locals => { :comment => @new_comment }

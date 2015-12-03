@@ -9,6 +9,7 @@ class Article < ActiveRecord::Base
   validates_attachment_content_type :image, :content_type => /\Aimage\/.*\Z/
 
   acts_as_taggable
+  acts_as_commentable
 
   after_create :add_title_and_slug
 

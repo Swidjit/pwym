@@ -16,3 +16,9 @@
   .large-12.columns
     %h4=link_to @category.title, '/brain-articles/'+@category.slug
     =render :partial => @article.template.gsub('-','_')
+    #comments{:style=>'margin-top: 25px;'}
+      %h6 Comments
+      .comments
+        = render :partial => 'comments/comment', :collection => @comments, :as => :comment
+      -if user_signed_in?
+        = render :partial => 'comments/form', :locals => { :comment => @new_comment }
