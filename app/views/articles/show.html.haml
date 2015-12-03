@@ -15,5 +15,4 @@
 .row
   .large-12.columns
     %h4=link_to @category.title, '/brain-articles/'+@category.slug
-    %h3=@article.title
-    =@article.body.html_safe
+    =render :partial => @article.template.gsub('-','_')

@@ -36,7 +36,7 @@ Rails.application.routes.draw do
     resources :entries, :only => [:create,:index]
   end
 
-  resources :articles
+  resources :articles, :only => [:create, :new]
 
   resources :round_scores, :only => [:create]
 
