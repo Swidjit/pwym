@@ -416,3 +416,23 @@ h3.master-list {
     height: 140px;
   }
 }
+
+#post-attachments {
+  .remove {
+    position: absolute;
+    right: 5px;
+    top: 0px;
+    font-weight: 700;
+    font-size: 22px;
+    color: #eee;
+    background-color: #000;
+    border-radius: 10px;
+    width: 21px;
+    line-height:20px;
+    text-align:center;
+    z-index:1200;
+  }
+  .remove:hover {
+    background-color: red;
+  }
+}

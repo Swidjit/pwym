@@ -12,9 +12,7 @@ class PostsController < ApplicationController
   def create
     if user_signed_in?
       @post = Post.create(post_params)
-      params[:post][:website].each do |f|
-        @post.websites << Website.create(:title=>f[:title],:description=>f[:description],:url=>f[:url],:image_url=>f[:image_url])
-      end
+
       current_user.posts << @post
 
       redirect_to post_path(@post.slug)
@@ -111,7 +109,18 @@ class PostsController < ApplicationController
   end
 
   def scrape_url_for
-    if params[:url]
+    if params[:url] =~ /^(?:https?:\/\/)?(?:www\.)?youtu(?:\.be|be\.com)\/(?:watch\?v=)?([\w-]{10,})/
+      @video_url = params[:url]
+      @video_id = params[:url].split('/')[-1].split('=')[-1]
+      if @video_url =~ /^(?:https?:\/\/)?(?:www\.)?youtu(?:\.be|be\.com)\/(?:watch\?v=)?([\w-]{10,})/
+        @video_type = "youtube"
+      elsif @video_url.include? 'vimeo'
+        @video_type = 'vimeo'
+      elsif @video_url.include? 'vine.co'
+        @video_type = 'vine'
+      end
+      render '/posts/video_scrape'
+    elsif params[:url]
       @page = MetaInspector.new(params[:url],
                                 :warn_level => :store,
                                 :connection_timeout => 5, :read_timeout => 5,
@@ -135,6 +144,6 @@ class PostsController < ApplicationController
   end
 
   def post_params
-    params.require(:post).permit(:user_id, :resource_type, :category_id,:title,:body, :tag_list)
+    params.require(:post).permit(:user_id, :resource_type, :category_id,:title,:body, :tag_list, websites_attributes: [:title, :url, :description, :image_url],url_videos_attributes: [:title, :url, :description, :video_id, :video_source])
   end
 end

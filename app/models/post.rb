@@ -4,8 +4,9 @@ class Post < ActiveRecord::Base
 
   has_many :reactions
   has_many :websites
+  has_many :url_videos
 
-  accepts_nested_attributes_for :websites
+  accepts_nested_attributes_for :websites,:url_videos
 
   acts_as_commentable
   acts_as_taggable

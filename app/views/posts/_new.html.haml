@@ -2,20 +2,22 @@
   =f.hidden_field :resource_type, :value=>'prose'
 
   .row#post-form
-    .large-4.medium-5.columns
-      %label Title
-      =f.text_field :title
-      %label Tag relevant keywords or topics
+    .large-12.columns
+      =f.text_field :title, :placeholder => 'Untitled'
+
+    .large-8.medium-4.columns
+      =f.text_area :body, :class =>'first-input'
       #tag-list
-      %input{:type => 'text', :name => 'tags', :class => 'autocomplete', :autocomplete=>'off'}
+      =f.submit "save", :class=>"button large"
+    .large-4.medium-5.columns
+
+
+      %input{:type => 'text', :name => 'tags', :class => 'autocomplete', :autocomplete=>'off', :placeholder => 'tag keywords or topics'}
       =f.hidden_field :tag_list
       .autocomplete-options
-      #post-attachments
-    .large-8.medium-4.columns
+      .row#post-attachments
+        #attachments
 
-      =f.text_area :body, :class =>'first-input'
-
-  =f.submit "save", :class=>"button right"
 
 :javascript
   $('#post_body').on('paste', function() {
@@ -37,6 +39,9 @@
           });
       },100);
 
+   });
+   $(document).on('click','.remove',function() {
+    $(this).parent().remove();
    });
 
 
