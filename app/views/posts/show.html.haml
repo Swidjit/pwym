@@ -21,14 +21,22 @@
 .row
   .large-8.columns
     .post[@item]
-      %p=@item.body
+      .body
+        %p=@item.body
       =render :partial => 'posts/post_actions', :locals=>{post:@item}
       -@item.websites.each do |w|
-        =render w
+        :javascript
+          html = '</p>#{j render :partial => "websites/website", :locals=>{website:w}}<p>';
+          $('.body').html($('.body').html().replace('#{w.url}',html));
       -@item.url_videos.each do |w|
-        =render w
+        :javascript
+          html = '</p>#{j render :partial => "url_videos/url_video", :locals=>{url_video:w}}<p>';
+          $('.body').html($('.body').html().replace('#{w.url}',html));
       -@item.url_images.each do |w|
-        =render w
+        :javascript
+          html = '</p>#{j render :partial => "url_images/url_image", :locals=>{url_image:w}}<p>';
+          $('.body').html($('.body').html().replace('#{w.url}',html));
+
   .large-4.columns
     -@item.tag_list.each do |t|
       =link_to t, filtered_posts_path('all',t)

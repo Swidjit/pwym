@@ -88,7 +88,11 @@
                       %li=link_to p.title, '/puzzles-brainteasers/'+p.slug
       %ul.right
         -if user_signed_in?
-
+          %li.divider
+          %li{:style => "background-color: #835B9F;"}
+            .post-button
+              %i.fi-plus
+              %span post
           %li.divider
           %li.has-dropdown.small-dropdown
             =link_to current_user.username, user_path(current_user.username)

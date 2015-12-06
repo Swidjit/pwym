@@ -342,6 +342,12 @@
   }
 }
 
+.website {
+  background-color: #eee;
+  margin: 4px 10px;
+  padding: 4px 7px;
+}
+
 .article {
   a {
     line-height: 15px;
@@ -434,5 +440,22 @@ h3.master-list {
   }
   .remove:hover {
     background-color: red;
+  }
+}
+
+
+.post-button {
+  span {
+  color:#fff;
+  font-size: 25px;
+  margin-right: 7px;
+  font-weight: 600;
+  }
+  i {
+    color:#fff;
+    font-size: 25px;
+    background-color: #835B9F;
+    line-height: 45px;
+    padding: 6px;
   }
 }

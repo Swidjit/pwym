@@ -96,13 +96,20 @@
 #new-post.reveal-modal{"data-reveal" => ""}
   #form
   %a.close-reveal-modal ×
-
--if @upcoming_match.present?
+-if user_signed_in?
+  -if @upcoming_match.present?
+    :javascript
+      var int;
+      var match_id = parseInt('#{@upcoming_match.id}');
+      upcomingMatch();
   :javascript
-    var int;
-    var match_id = parseInt('#{@upcoming_match.id}');
-    upcomingMatch();
-
+    $('.post-button').on('click', function() {
+      $('#form').html("#{escape_javascript render :partial => 'posts/new'}");
+      $('#new-post').foundation('reveal', 'open');
+      $("#new-post").on("opened.fndtn.reveal", function(){
+        $('.first-input').focus();
+      });
+    });
 
 :javascript
 
@@ -132,13 +139,7 @@
        }
     });
   });
-  $('.post-option').on('click', function() {
-    showForm($(this));
-    $('#new-post').foundation('reveal', 'open');
-    $("#new-post").on("opened.fndtn.reveal", function(){
-      $('.first-input').focus();
-    });
-  });
+
   $( document ).on('keyup','.autocomplete', function() {
       if($(this).val().length > 2) {
         $.get('#{autocomplete_tag_search_posts_path}',{q:$(this).val()}, function(data) {
@@ -198,14 +199,7 @@
     $('.autocomplete').focus();
   })
 
-  function showForm(f) {
-    switch(f.data("post-type")) {
-        case "prose":
-          $('#form').html("#{escape_javascript render :partial => 'posts/new'}");
-          break;
 
-      }
-  }
   function upcomingMatch() {
     checkMatch();
     int=setInterval(checkMatch, 60000);
