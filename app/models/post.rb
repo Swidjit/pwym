@@ -3,6 +3,9 @@ class Post < ActiveRecord::Base
   belongs_to :user
 
   has_many :reactions
+  has_many :websites
+
+  accepts_nested_attributes_for :websites
 
   acts_as_commentable
   acts_as_taggable

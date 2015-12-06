@@ -1,16 +1,16 @@
 -content_for :head do
-  %title #{@post.title} | Games, Puzzles, Brainteasers & IQ Tests
-  %meta{:content => @post.title, :property => "og:title"}
+  %title #{@item.title} | Games, Puzzles, Brainteasers & IQ Tests
+  %meta{:content => @item.title, :property => "og:title"}
   %meta{:content => "PlayWithYourMind | Brain Games & Mind Puzzles", :property => "og:site_name"}
   %meta{:content => image_url('brain-games.png'), :property => "og:image"}
-  %meta{:content => @article.body.truncate(144), :property => "og:description"}
-  %meta{:content => @post.title, :property => "twitter:title"}
+  %meta{:content => @item.body.truncate(144), :property => "og:description"}
+  %meta{:content => @item.title, :property => "twitter:title"}
   %meta{:content => "PlayWithYourMind | Brain Games & Mind Puzzles", :property => "twitter:site"}
   %meta{:content => image_url('brain-games.png'), :property => "twitter:image"}
-  %meta{:content => @post.body.truncate(144), :property => "twitter:description"}
+  %meta{:content => @item.body.truncate(144), :property => "twitter:description"}
   %meta{:content => "summary", :property => "twitter:card"}
-  %meta{:content => "#{@post.title} | PlayWithYourMind", :property => "title"}
-  %meta{:property => "description", :content => @post.body.truncate(144)}
+  %meta{:content => "#{@item.title} | PlayWithYourMind", :property => "title"}
+  %meta{:property => "description", :content => @item.body.truncate(144)}
 
 .row
   .large-12.columns
@@ -23,6 +23,9 @@
     .post[@item]
       %p=@item.body
       =render :partial => 'posts/post_actions', :locals=>{post:@item}
+      -@item.websites.each do |w|
+        =render w
+
   .large-4.columns
     -@item.tag_list.each do |t|
       =link_to t, filtered_posts_path('all',t)

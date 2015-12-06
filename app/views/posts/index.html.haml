@@ -3,7 +3,7 @@
   %meta{:content => "Brainy Fun | Games, Puzzles, Optical Illusions & More", :property => "og:title"}
   %meta{:content => "PlayWithYourMind | Brain Games & Mind Puzzles", :property => "og:site_name"}
   %meta{:content => image_url('brain-games.png'), :property => "og:image"}
-  %meta{:content => "Share and discover games, tests, illusions, and more to play with your mind!" :property => "og:description"}
+  %meta{:content => "Share and discover games, tests, illusions, and more to play with your mind!", :property => "og:description"}
   %meta{:content => "Brainy Fun | Games, Puzzles, Optical Illusions & More", :property => "twitter:title"}
   %meta{:content => "PlayWithYourMind | Brain Games & Mind Puzzles", :property => "twitter:site"}
   %meta{:content => image_url('brain-games.png'), :property => "twitter:image"}
@@ -14,7 +14,7 @@
 .row
   .large-4.columns
     %h4 Adding Content
-    %button#debate-post.right.button.dropdown{"aria-controls" => "post-options", "aria-expanded" => "false", "data-dropdown" => "post-options", :href => "#"} Post about election
+    %button#debate-post.right.button.dropdown{"aria-controls" => "post-options", "aria-expanded" => "false", "data-dropdown" => "post-options", :href => "#"} Post
     %ul#post-options.f-dropdown{"aria-hidden" => "true", "data-dropdown-content" => ""}
       %li
         %div{"data-post-type" => "video", :class=>"post-option"} Post a Video
@@ -34,3 +34,19 @@
 
       -else
         %p No listings
+:javascript
+  $('.post-option').on('click', function() {
+    showForm($(this));
+    $('#new-post').foundation('reveal', 'open');
+    $("#new-post").on("opened.fndtn.reveal", function(){
+      $('.first-input').focus();
+    });
+  });
+  function showForm(f) {
+    switch(f.data("post-type")) {
+        case "prose":
+          $('#form').html("#{escape_javascript render :partial => 'posts/new'}");
+          break;
+
+      }
+  }

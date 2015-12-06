@@ -11,6 +11,7 @@ Rails.application.routes.draw do
   resources :posts, :only => [:create, :update, :destroy, :show,:index, :edit] do
     collection do
       get 'autocomplete_tag_search'
+      get 'scrape_url_for'
     end
     member do
       post 'create_or_destroy_reaction'
@@ -70,6 +71,7 @@ Rails.application.routes.draw do
   get '/puzzles-brainteasers/:puzzle/' => 'puzzle_categories#show'
   get '/puzzles-brainteasers/' => 'puzzle_categories#index'
   post '/brainball/*all' => 'pages#brainball', defaults: { format: 'xml' }
+
   match '/users/:id/finish_signup' => 'users#finish_signup', via: [:get, :patch], :as => :finish_signup
 
 

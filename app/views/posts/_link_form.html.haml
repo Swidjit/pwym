@@ -1,0 +1,5 @@
+%input{:name => "post[website][][url]", :type => "text", :value => page.url}
+%input{:name => "post[website][][title]", :type => "text", :value => page.title}
+%input{:name => "post[website][][description]", :type => "text", :value => page.description.gsub("'","")}
+%input{:name => "post[website][][image_url]", :type => "text", :value => page.images.best}
+

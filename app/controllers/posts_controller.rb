@@ -12,6 +12,9 @@ class PostsController < ApplicationController
   def create
     if user_signed_in?
       @post = Post.create(post_params)
+      params[:post][:website].each do |f|
+        @post.websites << Website.create(:title=>f[:title],:description=>f[:description],:url=>f[:url],:image_url=>f[:image_url])
+      end
       current_user.posts << @post
 
       redirect_to post_path(@post.slug)
@@ -107,7 +110,29 @@ class PostsController < ApplicationController
     end
   end
 
+  def scrape_url_for
+    if params[:url]
+      @page = MetaInspector.new(params[:url],
+                                :warn_level => :store,
+                                :connection_timeout => 5, :read_timeout => 5,
+                                :headers => { 'User-Agent' => user_agent, 'Accept-Encoding' => 'identity' })
+
+      if @page.response.nil?
+
+      else
+        render '/posts/link_scrape'
+      end
+    else
+
+      render 'scrapes/scrape_failed'
+    end
+  end
+
   private
+
+  def user_agent
+    "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_10_2) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/40.0.2214.111 Safari/537.36"
+  end
 
   def post_params
     params.require(:post).permit(:user_id, :resource_type, :category_id,:title,:body, :tag_list)
