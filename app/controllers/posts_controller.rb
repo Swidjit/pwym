@@ -120,6 +120,10 @@ class PostsController < ApplicationController
         @video_type = 'vine'
       end
       render '/posts/video_scrape'
+    elsif ['gif','jpg','jpeg','.png'].include?(params[:url].split('.').last)
+      @image_url = params[:url]
+      puts('jhey')
+      render '/posts/image_scrape'
     elsif params[:url]
       @page = MetaInspector.new(params[:url],
                                 :warn_level => :store,
@@ -144,6 +148,6 @@ class PostsController < ApplicationController
   end
 
   def post_params
-    params.require(:post).permit(:user_id, :resource_type, :category_id,:title,:body, :tag_list, websites_attributes: [:title, :url, :description, :image_url],url_videos_attributes: [:title, :url, :description, :video_id, :video_source])
+    params.require(:post).permit(:user_id, :resource_type, :category_id,:title,:body, :tag_list, websites_attributes: [:title, :url, :description, :image_url],url_images_attributes: [:url,:title, :description], url_videos_attributes: [:title, :url, :description, :video_id, :video_source])
   end
 end

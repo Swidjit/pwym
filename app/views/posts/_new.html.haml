@@ -34,7 +34,7 @@
           }
           console.log(urls);
           $.each(urls, function(index, value) {
-            console.log(value);
+
             $.get('#{scrape_url_for_posts_path}',{url:value});
           });
       },100);
