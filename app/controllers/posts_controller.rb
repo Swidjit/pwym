@@ -109,6 +109,10 @@ class PostsController < ApplicationController
   end
 
   def scrape_url_for
+    @page = MetaInspector.new(params[:url],
+                              :warn_level => :store,
+                              :connection_timeout => 5, :read_timeout => 5,
+                              :headers => { 'User-Agent' => user_agent, 'Accept-Encoding' => 'identity' })
     if params[:url] =~ /^(?:https?:\/\/)?(?:www\.)?youtu(?:\.be|be\.com)\/(?:watch\?v=)?([\w-]{10,})/
       @video_url = params[:url]
       @video_id = params[:url].split('/')[-1].split('=')[-1]
@@ -122,16 +126,12 @@ class PostsController < ApplicationController
       render '/posts/video_scrape'
     elsif ['gif','jpg','jpeg','.png'].include?(params[:url].split('.').last)
       @image_url = params[:url]
-      puts('jhey')
       render '/posts/image_scrape'
     elsif params[:url]
-      @page = MetaInspector.new(params[:url],
-                                :warn_level => :store,
-                                :connection_timeout => 5, :read_timeout => 5,
-                                :headers => { 'User-Agent' => user_agent, 'Accept-Encoding' => 'identity' })
+
 
       if @page.response.nil?
-
+        render :nothing => :true
       else
         render '/posts/link_scrape'
       end
