@@ -1,11 +1,13 @@
 namespace :init do
 
   task :add_tags => :environment do
+    Tag.destroy_all
     ActsAsTaggableOn::Tag.create(:name => "neuroscience")
     ActsAsTaggableOn::Tag.create(:name => "puzzles")
-    ActsAsTaggableOn::Tag.create(:name => "brain-teasers")
+    ActsAsTaggableOn::Tag.create(:name => "brainteasers")
     ActsAsTaggableOn::Tag.create(:name => "research")
     ActsAsTaggableOn::Tag.create(:name => "brain-fitness")
+    ActsAsTaggableOn::Tag.create(:name => "brain-training")
     ActsAsTaggableOn::Tag.create(:name => "iq-tests")
     ActsAsTaggableOn::Tag.create(:name => "optical-illusions")
     ActsAsTaggableOn::Tag.create(:name => "memory")
@@ -18,12 +20,19 @@ namespace :init do
     ActsAsTaggableOn::Tag.create(:name => "spatial-processing")
     ActsAsTaggableOn::Tag.create(:name => "reaction-speed")
     ActsAsTaggableOn::Tag.create(:name => "sensory-perception")
+    ActsAsTaggableOn::Tag.create(:name => "hand-eye-coordination")
     ActsAsTaggableOn::Tag.create(:name => "pattern-recognition")
     ActsAsTaggableOn::Tag.create(:name => "blogs")
-    ActsAsTaggableOn::Tag.create(:name => "games")
+    ActsAsTaggableOn::Tag.create(:name => "brain-games")
     ActsAsTaggableOn::Tag.create(:name => "articles")
     ActsAsTaggableOn::Tag.create(:name => "psychology")
     ActsAsTaggableOn::Tag.create(:name => "neuroplasticity")
+    ActsAsTaggableOn::Tag.create(:name => "mental-health")
+    ActsAsTaggableOn::Tag.create(:name => "mind-exercises")
+    ActsAsTaggableOn::Tag.create(:name => "sensory-tests")
+    ActsAsTaggableOn::Tag.create(:name => "alzheimers")
+    ActsAsTaggableOn::Tag.create(:name => "dementia")
+
   end
 
   task :seed_matches => :environment do

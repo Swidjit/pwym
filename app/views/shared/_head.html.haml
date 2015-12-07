@@ -57,35 +57,17 @@
                     -MemoryWorkout.all.order(id: :asc).each do |p|
                       %li=link_to p.title, '/memory-workout-program/'+p.slug
         %li.divider
-        %li.has-dropdown
+        %li.has-dropdown.small-dropdown
           %a{:href => "/brain-fun"} Brainy Fun
           %ul.dropdown.m-menu
-            %li
-              .row.column.padless
-                .large-3.medium-6.small-12.columns.padless
-                  =link_to "#", :class=>"dropdown-header" do
-                    %h3 News/Articles
-                  %ul
-                    -GameCategory.all.order(id: :asc).each do |gc|
-                      %li=link_to gc.title, '/brain-games/'+gc.slug
-                .large-3.medium-6.small-12.columns.padless
-                  =link_to "#", :class=>"dropdown-header" do
-                    %h3 Games/Puzzles
-                  %ul
-                    -PuzzleCategory.all.order(id: :asc).each do |p|
-                      %li=link_to p.title, '/puzzles-brainteasers/'+p.slug
-                .large-3.medium-6.small-12.columns.padless
-                  =link_to "#", :class=>"dropdown-header" do
-                    %h3 Optical Illusions
-                  %ul
-                    -PuzzleCategory.all.order(id: :asc).each do |p|
-                      %li=link_to p.title, '/puzzles-brainteasers/'+p.slug
-                .large-3.medium-6.small-12.columns.padless
-                  =link_to "#", :class=>"dropdown-header" do
-                    %h3 Sensory Tests
-                  %ul
-                    -PuzzleCategory.all.order(id: :asc).each do |p|
-                      %li=link_to p.title, '/puzzles-brainteasers/'+p.slug
+            %li=link_to "Brainteasers","/brain-fun/tags/brainteasers"
+            %li=link_to "Optical Illusions","/brain-fun/tags/optical-illusions"
+            %li=link_to "IQ Tests","/brain-fun/tags/iq-tests"
+            %li=link_to "Mind Exercises","/brain-fun/tags/mind-exercises"
+            %li=link_to "Brain Games","/brain-fun/tags/brain-games"
+            %li=link_to "Neuroscience","/brain-fun/tags/neuroscience"
+            %li=link_to "Psychology","/brain-fun/tags/psychology"
+
       %ul.right
         -if user_signed_in?
           %li.divider
