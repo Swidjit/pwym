@@ -30,7 +30,8 @@
         function addAttachments() {
           txt = $('.body').html();
           $.each(substitutions, function(index,value) {
-            txt= txt.replace(value['url'],value['txt']);
+          regex = new RegExp(value['url'],"g");
+            txt= txt.replace(regex,value['txt']);
           });
           $('.body').html(txt);
         }
