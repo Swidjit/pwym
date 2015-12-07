@@ -12,12 +12,14 @@
   %meta{:content => "Brainy Fun | Games, Puzzles, Optical Illusions & More", :property => "title"}
   %meta{:property => "description", :content => "Share and discover games, tests, illusions, and more to play with your mind!"}
 .row
-  .large-4.columns
-    %h4 Adding Content
-
-  .large-8.columns
+  .large-12.columns
     #posts
-      %h4 Recent Posts
+      %h4 Brain Fun
+      .breadcrumb
+        =link_to "Posts", "/brain-fun/"
+        >
+        -if params.has_key?(:tag)
+          =link_to '#'+params[:tag], '/brain-fun/tags/'+params[:tag]
 
 
       -if @posts.size > 0

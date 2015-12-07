@@ -57,6 +57,7 @@ Rails.application.routes.draw do
   get '/neuroscience/:id' => 'articles#show', :category=>'neuroscience'
   get '/brain-fun/:id' => 'posts#show'
   get '/brain-fun/' => 'posts#index'
+  get '/brain-fun/tags/:tag' => 'posts#index'
   get '/sitemap.xml' => 'pages#sitemap'
   get '/crossdomain.xml' => 'pages#crossdomain', defaults: { format: 'xml' }
   get '/game-instructions/:id' => 'instructions#show'

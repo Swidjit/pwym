@@ -1,6 +1,7 @@
-.post[post]
-  .post-title=post.title
-  .post-body=post.body
-  -post.tag_list.each do |t|
-    =link_to t, posts_path(:tag=>t)
-    ,
+=link_to '/brain-fun/'+post.slug do
+  .post[post]
+    .post-title=post.title
+    .post-body=post.body
+    -post.tag_list.each do |t|
+      =link_to t, posts_path(:tag=>t)
+

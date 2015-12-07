@@ -2,7 +2,7 @@ class Post < ActiveRecord::Base
 
   belongs_to :user
 
-  has_many :reactions
+  has_many :reactions, as: :reactable
   has_many :websites
   has_many :url_images
   has_many :url_videos
@@ -13,6 +13,8 @@ class Post < ActiveRecord::Base
   acts_as_taggable
 
   after_create :add_title_and_slug
+
+
 
   def add_title_and_slug
     if self.title.length == 0

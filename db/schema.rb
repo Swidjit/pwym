@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20151206210500) do
+ActiveRecord::Schema.define(version: 20151207141334) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -139,7 +139,7 @@ ActiveRecord::Schema.define(version: 20151206210500) do
     t.integer  "category_id"
     t.string   "resource_type"
     t.string   "resource_id"
-    t.integer  "importance",    default: 0
+    t.float    "importance",    default: 0.0
     t.string   "title"
     t.text     "body"
     t.string   "slug"
@@ -158,9 +158,10 @@ ActiveRecord::Schema.define(version: 20151206210500) do
   create_table "reactions", force: :cascade do |t|
     t.string   "reaction_type"
     t.integer  "user_id"
-    t.integer  "post_id"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.integer  "reactable_id"
+    t.string   "reactable_type"
   end
 
   create_table "round_scores", force: :cascade do |t|

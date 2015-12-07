@@ -64,44 +64,64 @@ class PostsController < ApplicationController
   end
 
   def create_or_destroy_reaction
-    @item = Post.find(params[:id])
+    @model = params[:model]
+    if @model == 'Post'
+      @item = Post.find(params[:id])
+      importance = 1
+    else
+      @att = @model.constantize.find(params[:id])
+      @item = @att.post
+      importance = 0.3
+    end
     cancelled = false
-    @reaction = Reaction.where(:post_id => params[:id], :user_id => current_user.id, :reaction_type => params[:type]).first
+    @reaction = Reaction.where(:reactable_type => params[:model], :reactable_id => params[:id], :user_id => current_user.id, :reaction_type => params[:type]).first
     if @reaction.present?
       Reaction.destroy(@reaction.id)
       cancelled = true
     else
-      @reaction = Reaction.create!(:post_id => params[:id], :user_id => current_user.id, :reaction_type => params[:type])
+      @reaction = Reaction.create!(:reactable_type => params[:model], :reactable_id => params[:id], :user_id => current_user.id, :reaction_type => params[:type])
     end
     case params[:type]
       when 'like'
         if cancelled
-          @item.update_attribute(:importance, @item.importance-1)
+          @item.update_attribute(:importance, @item.importance-importance)
         else
-          @item.update_attribute(:importance, @item.importance+1)
+          @item.update_attribute(:importance, @item.importance+importance)
         end
-
-        @count = @item.reactions.liked.size
+        if @att.present?
+          @count = @att.reactions.liked.size
+        else
+          @count = @item.reactions.liked.size
+        end
+        @model = params[:model].downcase
         @class = "like"
         render 'reactions/liked'
       when 'love'
         if cancelled
-          @item.update_attribute(:importance, @item.importance-3)
+          @item.update_attribute(:importance, @item.importance-(importance*3))
         else
-          @item.update_attribute(:importance, @item.importance+3)
+          @item.update_attribute(:importance, @item.importance+(importance*3))
         end
-
-
-        @count = @item.reactions.loved.size
+        if @att.present?
+          @count = @att.reactions.loved.size
+        else
+          @count = @item.reactions.loved.size
+        end
+        @model = params[:model].downcase
         @class = "love"
         render 'reactions/liked'
       when 'share'
         if cancelled
-          @item.update_attribute(:importance, @item.importance-5)
+          @item.update_attribute(:importance, @item.importance-(importance*5))
         else
-          @item.update_attribute(:importance, @item.importance+5)
+          @item.update_attribute(:importance, @item.importance+(importance*5))
         end
-        @count = @item.reactions.shared.size
+        if @att.present?
+          @count = @att.reactions.shared.size
+        else
+          @count = @item.reactions.shared.size
+        end
+        @model = params[:model].downcase
         @class = "share"
         render 'reactions/liked'
 
