@@ -351,7 +351,17 @@
     margin-bottom: 4px;
   }
 }
-
+.link-url {
+  font-size: .8em;
+  line-height: .85em;
+  margin: 4px 15px 8px 5px;
+}
+.link-title {
+  font-size: .9em;
+  overflow: hidden;
+  white-space: none;
+  height: 20px;
+}
 .url-image {
   background-color: #eee;
   margin: 4px 7px 4px 14px;
@@ -445,9 +455,10 @@ h3.master-list {
     font-size: 22px;
     color: #eee;
     background-color: #000;
-    border-radius: 10px;
-    width: 21px;
-    line-height:20px;
+    border-radius: 12px;
+    width: 23px;
+    line-height:21px;
+    height: 23px;
     text-align:center;
     z-index:1200;
   }
