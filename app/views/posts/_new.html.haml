@@ -26,8 +26,8 @@
 
       setTimeout(function(){
           if(!$('#post_title').val()) {
-            console.log($self.val());
-            $('#post_title').val(jQuery.trim($self.val()).substring(0, 30).split(" ").slice(0, -1).join(" "));
+            $txt = $self.val().replace(/(\b(https?|ftp|file):\/\/[-A-Z0-9+&@#\/%?=~_|!:,.;]*[-A-Z0-9+&@#\/%=~_|])/ig, '');
+            $('#post_title').val($txt.substring(0, 30).split(" ").slice(0, -1).join(" ").replace(/[^a-zA-Z\d\s:]/g, ''));
           }
           var $content = $self.val();
           var urls = new Array;
@@ -38,7 +38,6 @@
           {
               urls.push(matches[0]);
           }
-          console.log(urls);
           $.each(urls, function(index, value) {
 
             $.get('#{scrape_url_for_posts_path}',{url:value});
