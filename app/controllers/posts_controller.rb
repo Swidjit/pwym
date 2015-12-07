@@ -109,6 +109,11 @@ class PostsController < ApplicationController
   end
 
   def scrape_url_for
+    puts params[:url].split('.').last
+    if params[:url].include?('?')
+      params[:url] = params[:url].split('?').first
+      puts params[:url]
+    end
     @page = MetaInspector.new(params[:url],
                               :warn_level => :store,
                               :connection_timeout => 5, :read_timeout => 5,
@@ -124,7 +129,7 @@ class PostsController < ApplicationController
         @video_type = 'vine'
       end
       render '/posts/video_scrape'
-    elsif ['gif','jpg','jpeg','.png'].include?(params[:url].split('.').last)
+    elsif ['gif','jpg','jpeg','png'].include?(params[:url].split('.').last)
       @image_url = params[:url]
       render '/posts/image_scrape'
     elsif params[:url]

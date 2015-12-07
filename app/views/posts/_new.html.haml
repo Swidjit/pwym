@@ -21,8 +21,14 @@
 
 :javascript
   $('#post_body').on('paste', function() {
-      $self = $(this);
+    $self = $(this);
+
+
       setTimeout(function(){
+          if(!$('#post_title').val()) {
+            console.log($self.val());
+            $('#post_title').val(jQuery.trim($self.val()).substring(0, 30).split(" ").slice(0, -1).join(" "));
+          }
           var $content = $self.val();
           var urls = new Array;
           var text = $content;
