@@ -18,10 +18,11 @@ class Post < ActiveRecord::Base
 
   def add_title_and_slug
     if self.title.length == 0
-      self.title = self.body.truncate(25, :separator => ' ',omission: '')
+      self.title = self.body.gsub(/(?:http|https):\/\/[a-z0-9]+(?:[\-\.]{1}[a-z0-9]+)*\.[a-z]{2,5}(?:(?::[0-9]{1,5})?\/[^\s]*)?/ix,'').truncate(30, :separator => ' ',omission: '').gsub(/[^a-z0-9\s]/i, '')
+      self.title = "Untitled "+ self.id.to_s if self.title == ""
 
     end
-    self.slug =self.title.gsub(' ','-')
+    self.slug =(self.title.gsub(' ','-') + self.id.to_s)
     self.save
   end
 
