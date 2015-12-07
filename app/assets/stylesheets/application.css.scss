@@ -344,8 +344,21 @@
 
 .website {
   background-color: #eee;
-  margin: 4px 10px;
+  margin: 4px 7px 4px 14px;
   padding: 4px 7px;
+  p {
+    font-size: .85em;
+    margin-bottom: 4px;
+  }
+}
+
+.url-image {
+  background-color: #eee;
+  margin: 4px 7px 4px 14px;
+  padding: 4px 7px;
+  img {
+    margin-bottom: 4px;
+  }
 }
 
 .article {

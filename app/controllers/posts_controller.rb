@@ -67,10 +67,12 @@ class PostsController < ApplicationController
     @model = params[:model]
     if @model == 'Post'
       @item = Post.find(params[:id])
+      @model = 'post-'+@item.id.to_s
       importance = 1
     else
       @att = @model.constantize.find(params[:id])
       @item = @att.post
+      @model = params[:model].downcase+'-'+@att.id.to_s
       importance = 0.3
     end
     cancelled = false
@@ -89,11 +91,13 @@ class PostsController < ApplicationController
           @item.update_attribute(:importance, @item.importance+importance)
         end
         if @att.present?
+
           @count = @att.reactions.liked.size
         else
+
           @count = @item.reactions.liked.size
         end
-        @model = params[:model].downcase
+
         @class = "like"
         render 'reactions/liked'
       when 'love'
@@ -107,7 +111,6 @@ class PostsController < ApplicationController
         else
           @count = @item.reactions.loved.size
         end
-        @model = params[:model].downcase
         @class = "love"
         render 'reactions/liked'
       when 'share'
@@ -121,7 +124,6 @@ class PostsController < ApplicationController
         else
           @count = @item.reactions.shared.size
         end
-        @model = params[:model].downcase
         @class = "share"
         render 'reactions/liked'
 
@@ -129,7 +131,7 @@ class PostsController < ApplicationController
   end
 
   def scrape_url_for
-    puts params[:url].split('.').last
+
     if params[:url].include?('?')
       params[:url] = params[:url].split('?').first
       puts params[:url]
@@ -138,6 +140,7 @@ class PostsController < ApplicationController
                               :warn_level => :store,
                               :connection_timeout => 5, :read_timeout => 5,
                               :headers => { 'User-Agent' => user_agent, 'Accept-Encoding' => 'identity' })
+    @url=params[:url]
     if params[:url] =~ /^(?:https?:\/\/)?(?:www\.)?youtu(?:\.be|be\.com)\/(?:watch\?v=)?([\w-]{10,})/
       @video_url = params[:url]
       @video_id = params[:url].split('/')[-1].split('=')[-1]
