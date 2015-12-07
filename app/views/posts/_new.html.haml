@@ -20,6 +20,7 @@
 
 
 :javascript
+  var urls = new Array;
   $('#post_body').on('paste', function() {
     $self = $(this);
 
@@ -30,23 +31,29 @@
             $('#post_title').val($txt.substring(0, 30).split(" ").slice(0, -1).join(" ").replace(/[^a-zA-Z\d\s:]/g, ''));
           }
           var $content = $self.val();
-          var urls = new Array;
+
           var text = $content;
           var regexp = /(\b(https?|ftp|file):\/\/[-A-Z0-9+&@#\/%?=~_|!:,.;]*[-A-Z0-9+&@#\/%=~_|])/ig;
 
           while (matches = regexp.exec(text))
           {
+            if(urls.indexOf(matches[0]) == -1) {
               urls.push(matches[0]);
+              $.get('#{scrape_url_for_posts_path}',{url:matches[0]});
+            }
           }
           $.each(urls, function(index, value) {
 
-            $.get('#{scrape_url_for_posts_path}',{url:value});
+
           });
       },100);
 
    });
    $(document).on('click','.remove',function() {
-    $(this).parent().remove();
+    url = $(this).parent().attr('url');
+    console.log(url);
+    urls.splice(urls.indexOf(url),1);
+      $(this).parent().remove();
    });
 
 
