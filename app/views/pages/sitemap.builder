@@ -14,7 +14,7 @@ xml.tag! 'urlset', 'xmlns' => 'http://www.sitemaps.org/schemas/sitemap/0.9' do
   xml.url{
       xml.loc(root_url+'brain-articles')
       xml.changefreq("weekly")
-      xml.priority(0.9)
+      xml.priority(0.7)
   }
   xml.url{
       xml.loc(root_url+'puzzles-brainteasers')
@@ -36,7 +36,7 @@ xml.tag! 'urlset', 'xmlns' => 'http://www.sitemaps.org/schemas/sitemap/0.9' do
 	  xml.url{
 	      xml.loc(root_url + 'brain-articles/'+ c.slug)
 	      xml.changefreq("weekly")
-	      xml.priority(0.8)
+	      xml.priority(0.6)
 	  }
 
   end
@@ -80,7 +80,7 @@ xml.tag! 'urlset', 'xmlns' => 'http://www.sitemaps.org/schemas/sitemap/0.9' do
 	  xml.url{
 	      xml.loc(root_url + 'brain-games/'+ c.game_categories.first.slug + '/' + c.slug)
 	      xml.changefreq("yearly")
-	      xml.priority(0.5)
+	      xml.priority(0.4)
 	  }
 
   end
@@ -89,9 +89,17 @@ xml.tag! 'urlset', 'xmlns' => 'http://www.sitemaps.org/schemas/sitemap/0.9' do
 	  xml.url{
 	      xml.loc(root_url + 'brain-fitness-games/'+ c.exercise_category.slug + '/' + c.slug)
 	      xml.changefreq("yearly")
-	      xml.priority(0.5)
+	      xml.priority(0.4)
 	  }
 
+  end
+
+  ActsAsTaggableOn::Tag.all.each do |t|
+	  xml.url{
+	      xml.loc(root_url + 'brain-fun/tags/'+ t.name)
+	      xml.changefreq("weekly")
+	      xml.priority(0.3)
+	  }
   end
 
   Post.all.each do |post|
