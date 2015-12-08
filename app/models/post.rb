@@ -2,10 +2,10 @@ class Post < ActiveRecord::Base
 
   belongs_to :user
 
-  has_many :reactions, as: :reactable
-  has_many :websites
-  has_many :url_images
-  has_many :url_videos
+  has_many :reactions, as: :reactable,dependent: :destroy
+  has_many :websites,dependent: :destroy
+  has_many :url_images,dependent: :destroy
+  has_many :url_videos,dependent: :destroy
 
   accepts_nested_attributes_for :websites,:url_videos, :url_images
 

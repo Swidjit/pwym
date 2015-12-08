@@ -12,7 +12,7 @@
   %meta{:content => "Brainy Fun | Games, Puzzles, Optical Illusions & More", :property => "title"}
   %meta{:property => "description", :content => "Share and discover games, tests, illusions, and more to play with your mind!"}
 .row
-  .large-12.columns
+  .large-9.columns
     #posts
       %h4 Brain Fun
       -if params.has_key?(:tag)
@@ -28,3 +28,4 @@
 
       -else
         %p No listings
+  .large-3.columns
