@@ -341,15 +341,47 @@
     margin-left: 15px;
   }
 }
+.post {
+  background-color: rgba(55, 66, 121, 0.14);
+  padding: 9px 17px;
+  margin-bottom: 15px;
+  overflow: hidden;
+  padding-right: 15px;
+  .text {
+    margin-right: 12px;
+    overflow:hidden;
+    padding-right: 10px;
+  }
+}
+.post-tags {
+  margin-top:6px;
+}
 
+.tag {
+  font-size: 1.1em;
+}
 .website {
-  background-color: #eee;
-  margin: 4px 7px 4px 14px;
-  padding: 4px 7px;
+  background-color: rgba(55, 66, 121, 0.14);
+  padding: 4px 7px 4px 14px;
   p {
     font-size: .85em;
     margin-bottom: 4px;
   }
+  .title {
+      overflow: hidden;
+  white-space: none;
+  height: 25px;
+  }
+
+}
+.topic {
+
+  padding: 4px 7px 4px 14px;
+  p {
+    font-size: .85em;
+    margin-bottom: 4px;
+  }
+
 }
 .link-url {
   font-size: .8em;
@@ -363,14 +395,19 @@
   height: 20px;
 }
 .url-image {
-  background-color: #eee;
-  margin: 4px 7px 4px 14px;
-  padding: 4px 7px;
+  background-color: rgba(55, 66, 121, 0.14);
+  margin: 4px px 4px 5px;
+  padding: 5px 5px 0px;
   img {
     margin-bottom: 4px;
   }
 }
+.url-video {
+  background-color:rgba(55, 66, 121, 0.14);
+  margin: 4px 7px 4px 14px;
+  padding: 4px 7px;
 
+}
 .article {
   a {
     line-height: 15px;
@@ -466,8 +503,14 @@ h3.master-list {
     background-color: red;
   }
 }
+.post-title {
+  font-size: 1.2em;
+}
+.post-body {
+  font-size: .85em;
+  line-height: 1.2em;
 
-
+}
 .post-button {
   span {
   color:#fff;

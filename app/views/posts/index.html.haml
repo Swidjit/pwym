@@ -15,10 +15,11 @@
   .large-12.columns
     #posts
       %h4 Brain Fun
-      .breadcrumb
-        =link_to "Posts", "/brain-fun/"
-        >
-        -if params.has_key?(:tag)
+      -if params.has_key?(:tag)
+        .breadcrumb
+
+          =link_to "Posts", "/brain-fun/"
+          >
           =link_to '#'+params[:tag], '/brain-fun/tags/'+params[:tag]
 
 

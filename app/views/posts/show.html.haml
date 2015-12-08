@@ -17,7 +17,15 @@
     %h4=@item.title
     -if can? :update, @item
       =link_to 'edit', edit_post_path(@item)
-
+      =link_to post_path(@item.id), :method=>:delete do
+        .delete
+          %i.fi-trash
+          delete
+    .breadcrumb
+      =link_to "Posts", "/brain-fun/"
+      >
+      -@item.tag_list.each do |tag|
+        =link_to '#'+tag, '/brain-fun/tags/'+tag
 .row
   .large-8.columns
     .post[@item]
@@ -50,11 +58,12 @@
           substitutions.push({'url':'#{w.url}','txt':html});
         -puts w.url
   .large-4.columns
-    %h5 Tags
-    -@item.tag_list.each do |tag|
-      =link_to '#'+tag, '/brain-fun/tags/'+tag
-    #comments{:style=>'margin-top: 25px;'}
-      %h6 Comments
+    -if @item.tag_list.size > 0
+      %h5 Tags
+      -@item.tag_list.each do |tag|
+        =link_to '#'+tag, '/brain-fun/tags/'+tag
+    #comments
+      %h4 Comments
       .comments
         = render :partial => 'comments/comment', :collection => @comments, :as => :comment
       -if user_signed_in?

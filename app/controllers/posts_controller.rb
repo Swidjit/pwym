@@ -12,7 +12,6 @@ class PostsController < ApplicationController
   def create
     if user_signed_in?
       @post = Post.create(post_params)
-
       current_user.posts << @post
 
       redirect_to post_path(@post.slug)
@@ -50,8 +49,12 @@ class PostsController < ApplicationController
     @post = Post.find(params[:id])
     @id=@post.id
     if @post.destroy
-      respond_with do |format|
-        format.js {render 'destroy', :locals=>{id:@id}}
+      if request.xhr?
+        respond_with do |format|
+          format.js {render 'destroy', :locals=>{id:@id}}
+        end
+      else
+        redirect_to '/brain-fun/'
       end
     end
   end

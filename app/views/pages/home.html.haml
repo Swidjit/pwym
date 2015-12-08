@@ -58,7 +58,7 @@
             %li=link_to "order","/memory-workout-program/word-order-game"
             %li=link_to "all>","/memory-workout-program/"
           %li
-            %h4=link_to "Brainy Links",posts_path
+            %h4=link_to "Brainy Links",'/brain-fun/'
           %ul.sub-section
             %li=link_to "brainteasers","/brain-fun/tags/brainteasers"
             %li=link_to "mind games","/brain-fun/tags/brain-games"
@@ -86,7 +86,7 @@
     .row
 
       .large-7.columns
-        %h4 Brainy Links
+        %h4 More Brain Fun
         =render Post.all.limit(10).order(created_at: :desc)
       .large-5.columns
         %h4 Articles

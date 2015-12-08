@@ -22,7 +22,8 @@ class Post < ActiveRecord::Base
       self.title = "Untitled "+ self.id.to_s if self.title == ""
 
     end
-    self.slug =(self.title.gsub(' ','-') + self.id.to_s)
+    self.title=self.title.chomp(' ') if self.title[-1,1]
+    self.slug =(self.title.gsub(' ','-') + '-'+self.id.to_s)
     self.save
   end
 
