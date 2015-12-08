@@ -137,7 +137,8 @@ class PostsController < ApplicationController
 
     if params[:url].include?('?')
       @clean_url = params[:url].split('?').first
-
+    else
+      @clean_url = params[:url]
     end
     @page = MetaInspector.new(params[:url],
                               :warn_level => :store,

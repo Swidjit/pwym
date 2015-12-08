@@ -34,12 +34,16 @@
       =render :partial => 'posts/actions', :locals=>{post:@item,model:'Post',user: @item.user}
       :javascript
         var substitutions = [];
-        setTimeout(addAttachments,300);
+        setTimeout(addAttachments,500);
+
         function addAttachments() {
+          console.log(substitutions);
           txt = $('.body').html();
           $.each(substitutions, function(index,value) {
-          regex = new RegExp(value['url'],"g");
-            txt= txt.replace(regex,value['txt']);
+            regex = new RegExp(value['url'],"g");
+            //txt= txt.replace(regex,value['txt']);
+            txt= txt.replace(value['url'],value['txt']);
+            console.log(txt);
           });
           $('.body').html(txt);
         }
