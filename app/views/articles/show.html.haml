@@ -13,7 +13,7 @@
   %meta{:property => "description", :content => @article.body.truncate(144)}
 
 .row
-  .large-12.columns
+  .large-8.columns
     %h4=link_to @category.title, '/brain-articles/'+@category.slug
     =render :partial => @article.template.gsub('-','_')
     #comments{:style=>'margin-top: 25px;'}
@@ -22,3 +22,15 @@
         = render :partial => 'comments/comment', :collection => @comments, :as => :comment
       -if user_signed_in?
         = render :partial => 'comments/form', :locals => { :comment => @new_comment }
+  .large-4.columns
+    .panel{:style=>'background-color:#F9F08A;margin-top: 10px;'}
+      %h5  Watching the Debates Tonight?
+      %p<
+        Be among the first to experience our
+        %b live debate fantasy games
+
+        ! In
+        =link_to "Fantasy Debates", "http://www.presidentialelectiongames.com/2016/games/fantasy-debates"
+        , you select a roster of topics and score points each time they are used during debates.  You can also created an automated
+        =link_to "debate bingo", "http://www.presidentialelectiongames.com/2016/games/debate-bingo"
+        card that fills in as candidates say thngs. In either game, you can play against friends, or the world.

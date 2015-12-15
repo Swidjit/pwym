@@ -22,6 +22,7 @@ Rails.application.routes.draw do
   resources :games, :only => [:show, :edit, :update, :index]
 
 
+
   resources :game_categories, :only => [:index, :show, :edit, :update]
 
   resources :matches, :only => [:create, :destroy, :show, :edit, :update] do

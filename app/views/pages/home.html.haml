@@ -89,6 +89,17 @@
         %h4 More Brain Fun
         =render Post.all.limit(10).order(created_at: :desc)
       .large-5.columns
+        .panel{:style=>'background-color:#F9F08A;'}
+          %h4 Watching the Debates Tonight?
+          %p<
+            Be among the first to experience our
+            %b live debate fantasy games
+
+            ! In
+            =link_to "Fantasy Debates", "http://www.presidentialelectiongames.com/2016/games/fantasy-debates"
+            , you select a roster of topics and score points each time they are used during debates.  You can also created an automated
+            =link_to "debate bingo", "http://www.presidentialelectiongames.com/2016/games/debate-bingo"
+            card that fills in as candidates say thngs. In either game, you can play against friends, or the world.
         %h4 Articles
         =render Article.where.not(:category_id=>3).limit(5).order(created_at: :desc)
         %h4 Site Updates
