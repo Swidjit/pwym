@@ -7,6 +7,7 @@ class Post < ActiveRecord::Base
   has_many :url_images,dependent: :destroy
   has_many :url_videos,dependent: :destroy
 
+
   accepts_nested_attributes_for :websites,:url_videos, :url_images
 
   acts_as_commentable
